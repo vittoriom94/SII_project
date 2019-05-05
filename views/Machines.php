@@ -26,8 +26,16 @@ class Machines extends View
             $tplName = "/machines";
         parent::__construct($tplName);
     }
-    public function setMachines(){
-        //TO DO
+    public function setMachines($machinesResultSet){
+        $this->openBlock("Machines");
+        while ($people = $machinesResultSet->fetch_object()) {
+            foreach(get_object_vars($people) as $attr){
+                $this->setVar(\MachineAttributes::$getAttr[$attr], $people->$attr);
+            }
+            $this->parseCurrentBlock();
+        }
+        $this->setBlock();
     }
+
     
 }
