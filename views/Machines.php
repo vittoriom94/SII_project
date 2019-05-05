@@ -26,5 +26,8 @@ class Machines extends View
             $tplName = "/machines";
         parent::__construct($tplName);
     }
+    public function setMachines(){
+        //TO DO
+    }
     
 }

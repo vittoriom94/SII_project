@@ -41,7 +41,8 @@ class Machines extends Controller
     */
     protected function autorun($parameters = null)
     {
-
+        $machinesList = $this->model->getMachines();
+        $this->view->setMachines($machinesList);
     }
 
     /**

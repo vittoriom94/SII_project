@@ -32,4 +32,8 @@ class Machines extends Model
     {
 
     }
+
+    public function getMachines(){
+        //TO DO
+    }
 }
