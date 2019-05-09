@@ -1,38 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
+
 <head>
-    <title>Welcome to PHP WEB MVC Framework</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> TEAM1 - Facilty Management</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Welcome to PHP WEB MVC Framework with Examples and Tools</h1>
-    <h2>Use the following link to run the examples and tools:</h2>
-    <h4>Note:</h4>
-    <h4>- Before using examples run the database installation script <strong>sql\mrp.sql</strong></h4>
-    <h4>- Also check and modify <strong>config\application.config.php</strong> and <strong>util\mysqlreflection\mysqlreflection.config.php</strong> according
-        to your database configuration</h4>
-    <br>
-    <a href="examples/">Run Web MVC examples and tools</a> <br>
-    <a href="{GLOBAL:SITEURL}/common/user_accounts">Users management</a><br>
-    <a href="{GLOBAL:LOGIN_PAGE}">Login page</a><br>
+<div id="demo">
+    <h1> TEAM1 - Facilty Management</h1>
+
+    <!-- Responsive table starts here -->
+    <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+    <p class="table-responsive-vertical shadow-z-1">
+        <!-- Table starts here -->
+    <table id="table" class="table table-hover table-mc-light-blue">
+        <thead>
+        <tr>
+            <th>Funzione</th>
+            <th>ID interno</th>
+            <th>Indirizzo IP</th>
+            <th>Costruttore</th>
+            <th>Modello</th>
+            <th>Anno</th>
+            <th>Marca CN</th>
+            <th>Modello CN</th>
+            <th>Versione</th>
+            <th>Note Versione</th>
+            <!--<th>Anno</th>-->
+            <th>Nome Lavorazioni</th>
+            <th>Numero Tx</th>
+            <th>Numero Rot</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- BEGIN Machines -->
+
+        <tr>
+            <td data-title="Funzione" name="tabella1">{descrizione}</td>
+            <td data-title="InternalID" name="tabella1">{IDInterno}</td>
+            <td data-title="IndirizzoIP" name="tabella1"> {IndirizzoIP} </td>
+            <td data-title="Manufacturer" name="tabella1">{Costruttore}</td>
+            <td data-title="Model" name="tabella1">{Modello} </td>
+            <td data-title="Year" name="tabella1">{Anno}</td>
+            <td data-title="Brand" name="tabella1">{MarcaCN}</td>
+            <td data-title="ModelCN" name="tabella1">{ModelloCN}</td>
+            <td data-title="Version" name="tabella1" >{Versione}</td>
+            <td data-title="VersionNote" name="tabella1">{NoteVersione}</td>
+            <!--<td data-title="Anno2" name="tabella1">{year2}</td>-->
+            <td data-title="WorkName" name="tabella1">{NomeLavorazioni}</td>
+            <td data-title="TextNumber" name="tabella1">{NumeroTx}</td>
+            <td data-title="TextNumber" name="tabella1">{NumeroRot}</td>
+        </tr>
+        <!-- END Machines -->
+        </tbody>
+    </table>
 
 </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<h2>Filtro</h2>
+<p><strong>Scegli cosa vuoi visulizzare nella tabella</strong></p>
+
+<input type="checkbox" id="1" name="parte1" value="Parte1" onchange="validateForm(this.id)"> Prima parte della tabella
+<br>
+<input type="checkbox" id="2" name="parte2" value="Parte2" onchange="validateForm(this.id)" > Seconda parte della tabella
+<br><br>
+
 </body>
+
+<script>
+    function validateForm(obj) {
+
+        var x;
+        var i;
+        x =  document.getElementsByName("tabella1");
+
+        if(document.getElementById("1").checked == true){
+            for (i = 8; i < x.length; i++) {
+                x[i].style.visibility = "hidden";
+                x[i-8].style.visibility = "visible";
+            }
+        }
+
+        if(document.getElementById("2").checked == true) {
+            for (i = 0; i < x.length/2; i++) {
+                x[i].style.visibility = "hidden";
+                x[i+x.length/2].style.visibility = "visible";
+            }
+        }
+
+        if (document.getElementById("1").checked == true && document.getElementById("2").checked == true ){
+            for (i = 0; i < x.length; i++) {
+                x[i].style.visibility = "visible";
+            }
+
+        }
+        if (document.getElementById("1").checked == false && document.getElementById("2").checked == false ){
+            for (i = 0; i < x.length; i++) {
+                x[i].style.visibility = "hidden";
+            }
+        }
+    }
+</script>
+
 </html>
+

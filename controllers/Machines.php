@@ -15,6 +15,7 @@ use framework\Model;
 use framework\View;
 use models\Machines as MachinesModel;
 use views\Machines as MachinesView;
+use framework\components\DataRepeater as DataRepeater;
 
 class Machines extends Controller
 {
