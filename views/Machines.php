@@ -30,7 +30,8 @@ class Machines extends View
         $this->openBlock("Machines");
         while ($people = $machinesResultSet->fetch_object()) {
             foreach(get_object_vars($people) as $attr){
-                $this->setVar(\MachineAttributes::$getAttr[$attr], $people->$attr);
+                $this->setVar(MachineAttributes::$getAttr[$attr], $people->$attr);
+                //echo "ddd";
             }
             $this->parseCurrentBlock();
         }

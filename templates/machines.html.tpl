@@ -26,20 +26,20 @@
     <tbody>
     <!-- BEGIN Machines -->
     <tr>
-        <td>{funzione}</td>
-        <td>{internalid}</td>
-        <td>{ip}</td>
-        <td>{manufacturer}</td>
-        <td>{model}</td>
-        <td>{year}</td>
-        <td>{brand}</td>
-        <td>{modelcn}</td>
-        <td>{version}</td>
-        <td>{versionnotes}</td>
-        <td>{year2}</td>
-        <td>{workname}</td>
-        <td>{txnumber}</td>
-        <td>{rotnumber}</td>
+        <td>{Function}</td>
+        <td>{InternalID}</td>
+        <td>{IP}</td>
+        <td>{Manufacturer}</td>
+        <td>{Model}</td>
+        <td>{Year}</td>
+        <td>{Brand}</td>
+        <td>{Modelcn}</td>
+        <td>{Version}</td>
+        <td>{Versionnotes}</td>
+        <td>{Year2}</td>
+        <td>{Workname}</td>
+        <td>{TNXumber}</td>
+        <td>{RotNumber}</td>
     </tr>
     <!-- END Machines -->
     </tbody>

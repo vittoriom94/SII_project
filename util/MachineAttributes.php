@@ -5,7 +5,7 @@
  * Date: 05/05/2019
  * Time: 15:10
  */
-
+namespace util;
 class MachineAttributes
 {
     public static $getAttr = array(

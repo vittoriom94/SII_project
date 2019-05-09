@@ -40,9 +40,18 @@ class Machines extends Controller
     *
     */
     protected function autorun($parameters = null)
-    {
+    {   // DataRepeater passes the values retrieved by the model to the view in order
+        // to populate the HTML block named “User”. The second parameter is null
+        // because we wish to retrieve our data from the associative array $users
+        // and not from a DB. The keys in the array must have the same name of placeholders  in the block.
+       // With the help of the framework class Controller, the method render()
+        // populates the the block ”User”.
+
         $machinesList = $this->model->getMachines();
-        $this->view->setMachines($machinesList);
+        $repeater = new DataRepeater($this->view, null ,"Machines", $machinesList);
+        $repeater->render();
+
+       
     }
 
     /**

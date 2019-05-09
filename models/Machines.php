@@ -7,7 +7,7 @@
  * @package models
  * @category Application Model
  * @author  {AuthorName} - {AuthorEmail}
-*/
+ */
 namespace models;
 
 use framework\Model;
@@ -15,19 +15,19 @@ use framework\Model;
 class Machines extends Model
 {
     /**
-    * Object constructor.
-    *
-    */
+     * Object constructor.
+     *
+     */
     public function __construct()
     {
         parent::__construct();
     }
 
     /**
-    * Autorun method. Put your code here for running it after object creation.
-    * @param mixed|array|null $parameters Additional parameters to manage
-    *
-    */
+     * Autorun method. Put your code here for running it after object creation.
+     * @param mixed|array|null $parameters Additional parameters to manage
+     *
+     */
     protected function autorun($parameters = null)
     {
 
@@ -35,5 +35,13 @@ class Machines extends Model
 
     public function getMachines(){
         //TO DO
+        $this->sql="SELECT * FROM mydb.entity";
+        $this->updateResultSet();
+        return $this->getResultSet();
     }
 }
+
+
+
+
+
