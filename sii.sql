@@ -83,7 +83,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`entities_properties` (
   `entity_id` INT NOT NULL,
   `property_id` INT NOT NULL,
-  `value` VARCHAR(45) NULL,
+  `value` VARCHAR(60) NULL,
   PRIMARY KEY (`entity_id`, `property_id`),
   INDEX `fk_property_has_entity_entity1_idx` (`entity_id` ASC),
   INDEX `fk_property_has_entity_property1_idx` (`property_id` ASC),
@@ -135,7 +135,6 @@ INSERT INTO `mydb`.`entity_type` (`id_entity_type`, `name`, `isa_level`) VALUES 
 INSERT INTO `mydb`.`entity_type` (`id_entity_type`, `name`, `isa_level`) VALUES (3, 'Macchina fresatrice', 2);
 INSERT INTO `mydb`.`entity_type` (`id_entity_type`, `name`, `isa_level`) VALUES (4, 'Elettroerosione', 2);
 INSERT INTO `mydb`.`entity_type` (`id_entity_type`, `name`, `isa_level`) VALUES (5, 'Laser Taglio', 2);
-INSERT INTO `mydb`.`entity_type` (`id_entity_type`, `name`, `isa_level`) VALUES (, '', );
 
 COMMIT;
 
@@ -170,19 +169,19 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mydb`;
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (1, 'ID Interno');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (2, 'Indirizzo IP');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (1, 'IDInterno');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (2, 'IndirizzoIP');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (3, 'Costruttore');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (4, 'Modello');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (5, 'Anno');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (6, 'Marca CN');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (7, 'Modello CN');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (6, 'MarcaCN');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (7, 'ModelloCN');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (8, 'Versione');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (9, 'Note Versione');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (9, 'NoteVersione');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (10, 'Anno');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (11, 'Nome Lavorazioni');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (12, 'Numero Tx');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (13, 'Numero Rot');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (11, 'NomeLavorazioni');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (12, 'NumeroTx');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (13, 'NumeroRot');
 
 COMMIT;
 
@@ -291,7 +290,7 @@ INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) V
 INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 6, 'Heidenhain');
 INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 7, 'iTCN530');
 INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 8, '606420-04-SP4');
-INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 9, 'FCL :04                      PLC : Megamill 6.0;  CC : 340542 07.12');
+INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 9, 'FCL :04; PLC : Megamill 6.0; CC : 340542 07.12');
 INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 10, '14/01/15');
 INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 11, 'Fresatura,Foratura,Maschiatura,Alesatura');
 INSERT INTO `mydb`.`entities_properties` (`entity_id`, `property_id`, `value`) VALUES (8, 12, '3,1,1,1');
