@@ -51,7 +51,7 @@ class Machines extends Controller
         $repeater = new DataRepeater($this->view, null ,"Machines", $machinesList);
         $repeater->render();
 
-       
+
     }
 
     /**
