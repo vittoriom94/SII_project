@@ -56,8 +56,8 @@ class Machines extends Model
         $this->sql = "EXECUTE stmt";
         $this->updateResultSet();
         $machines = $this->getResultSet();
-        $this->sql = "DEALLOCATE PREPARE stmt";
-        $this->updateResultSet();
+        //$this->sql = "DEALLOCATE PREPARE stmt";
+        //$this->updateResultSet();
         return $machines;
     }
 
