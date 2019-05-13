@@ -13,9 +13,14 @@
  *
  */
 
+namespace controllers;
+
 use framework\Controller;
 use framework\Model;
 use framework\View;
+
+use models\Machines as MachinesModel;
+use views\Form as FormView;
 
 
 class Form extends Controller
@@ -46,12 +51,12 @@ class Form extends Controller
     {
         if (isset($_POST["form_inserisci"])) {
             $funzione = $_POST["campo_funzione"];
-            $idinterno = $_POST["campo_idinterno"];
+            $properties[0] = $_POST["campo_idinterno"];
             //$indirizzoip = $_POST["campo_indirizzoip"];
             //$indirizzoip = $_POST["campo_indirizzoip"];
             //$this->model->login($email,$password);
             // Funzione unico parametro il resto in un array
-            $this->model->insertMachine($funzione,$idinterno);
+            $this->model->insertMachine($funzione,$properties);
         }
     }
     /**
@@ -72,7 +77,7 @@ class Form extends Controller
      */
     public function getView()
     {
-        $view = new Form("views/Form");
+        $view = new FormView("Form");
         return $view;
     }
 
@@ -82,7 +87,7 @@ class Form extends Controller
      */
     public function getModel()
     {
-        $model = new Form();
+        $model = new MachinesModel();
         return $model;
     }
 

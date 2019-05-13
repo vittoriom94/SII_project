@@ -64,19 +64,15 @@ class Machines extends Model
     public function insertMachine($function,$properties){
         $description = $function ." " . $properties[0];
         $type = intval($function);
-        $this->sql =
-            <<<SQL
-            start transaction;
-                insert into entity (descrizione, entity_type_id)
-                values ($description,$type);
-                set @id = LAST_INSERT_ID();
-                insert into entities_properties (entity_id,property_id,`value`)
-                values (@id,1,$properties[0]);
-            commit;
-SQL;
 
-
-
+        //$this->begin_transaction();
+        $this->sql = "insert into entity (descrizione, entity_type_id) values ('$description', $type)";
+        $this->updateResultSet();
+        $this->sql = "set @id = LAST_INSERT_ID()";
+        $this->updateResultSet();
+        $this->sql = "insert into entities_properties (entity_id,property_id,`value`) values (@id, 1, '$properties[0]')";
+        $this->updateResultSet();
+        //$this->commit();
     }
 
 }

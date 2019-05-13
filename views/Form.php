@@ -9,6 +9,8 @@
  * @author  {AuthorName} - {AuthorEmail}
  */
 
+namespace views;
+
 use framework\View;
 
 class Form extends View
