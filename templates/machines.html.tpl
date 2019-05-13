@@ -46,71 +46,124 @@
         <!-- BEGIN Machines -->
 
         <tr>
-            <td data-title="Funzione" name="tabella1">{descrizione}</td>
-            <td data-title="InternalID" name="tabella1">{IDInterno}</td>
-            <td data-title="IndirizzoIP" name="tabella1"> {IndirizzoIP} </td>
-            <td data-title="Manufacturer" name="tabella1">{Costruttore}</td>
-            <td data-title="Model" name="tabella1">{Modello} </td>
-            <td data-title="Year" name="tabella1">{Anno}</td>
-            <td data-title="Brand" name="tabella1">{MarcaCN}</td>
-            <td data-title="ModelCN" name="tabella1">{ModelloCN}</td>
-            <td data-title="Version" name="tabella1" >{Versione}</td>
-            <td data-title="VersionNote" name="tabella1">{NoteVersione}</td>
+            <td data-title="Funzione" class="tabella1">{descrizione}</td>
+            <td data-title="InternalID" class="tabella1">{IDInterno}</td>
+            <td data-title="IndirizzoIP" class="tabella1"> {IndirizzoIP} </td>
+            <td data-title="Manufacturer" class="tabella1">{Costruttore}</td>
+            <td data-title="Model" class="tabella1">{Modello} </td>
+            <td data-title="Year"  class="tabella1">{Anno}</td>
+            <td data-title="Brand" class="tabella2">{MarcaCN}</td>
+            <td data-title="ModelCN" class="tabella2">{ModelloCN}</td>
+            <td data-title="Version" class="tabella2" >{Versione}</td>
+            <td data-title="VersionNote" class="tabella2">{NoteVersione}</td>
             <!--<td data-title="Anno2" name="tabella1">{year2}</td>-->
-            <td data-title="WorkName" name="tabella1">{NomeLavorazioni}</td>
-            <td data-title="TextNumber" name="tabella1">{NumeroTx}</td>
-            <td data-title="TextNumber" name="tabella1">{NumeroRot}</td>
+            <td data-title="WorkName" class="tabella2">{NomeLavorazioni}</td>
+            <td data-title="TextNumber" class="tabella2">{NumeroTx}</td>
+            <td data-title="TextNumber" class="tabella2">{NumeroRot}</td>
         </tr>
         <!-- END Machines -->
         </tbody>
     </table>
-
 </div>
 
-<h2>Filtro</h2>
-<p><strong>Scegli cosa vuoi visulizzare nella tabella</strong></p>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01
+Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 
-<input type="checkbox" id="1" name="parte1" value="Parte1" onchange="validateForm(this.id)"> Prima parte della tabella
-<br>
-<input type="checkbox" id="2" name="parte2" value="Parte2" onchange="validateForm(this.id)" > Seconda parte della tabella
-<br><br>
+<head>
+    <title>PAGINA CARICAMENTO DATI</title>
+</head>
+
+<body>
+<table border="0">
+    <tr>
+        <td align="center">Inserisci i nuovi macchinari</td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <form method="post" id="inserimento_form" name="inserimento_form">
+                    <tr>
+                        <td>Funzione</td>
+                        <td><input type="text" id="campo_funzione" name="campo_funzione" class="form" value="" required></td>
+                    </tr>
+                    <tr>
+                        <td>ID Interno</td>
+                        <td><input type="text" id="campo_idinterno" name="campo_idinterno" class="form" value="" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Costruttore</td>
+                        <td><input type="text" id="campo_costruttore" name="campo_costruttore" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Indirizzo IP</td>
+                        <td><input type="text" id="campo_indirizzoip" name="campo_indirizzoip" class="form" value="" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Modello</td>
+                        <td><input type="text" id="campo_modello" name="campo_modello" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Anno</td>
+                        <td><input type="text" id="campo_anno" name="campo_anno" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Marca</td>
+                        <td><input type="text" id="campo_marca" name="campo_marca" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Modello CN</td>
+                        <td><input type="text" id="campo_modellocn" name="campo_modellocn" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Versione</td>
+                        <td><input type="text" id="campo_versione" name="campo_versione" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Note Versione</td>
+                        <td><input type="text" id="campo_noteversione" name="campo_noteversione" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome Lavorazioni</td>
+                        <td><input type="text" id="campo_nomelavorazioni" name="campo_nomelavorazioni" class="form" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Numero Tx</td>
+                        <td><input type="text" id="campo_numerotx" name="campo_camponumerotx" class="form" value="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Numero Root</td>
+                        <td><input type="text" id="campo_numeroroot" name="campo_numeroroot" class="form" value="">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td align="right">
+                            <input class="btn btn-success btn-lg" type="submit" id="form_inserisci"  class="Button" name="form_inserisci">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
 
 </body>
 
-<script>
-    function validateForm(obj) {
-
-        var x;
-        var i;
-        x =  document.getElementsByName("tabella1");
-
-        if(document.getElementById("1").checked == true){
-            for (i = 8; i < x.length; i++) {
-                x[i].style.visibility = "hidden";
-                x[i-8].style.visibility = "visible";
-            }
-        }
-
-        if(document.getElementById("2").checked == true) {
-            for (i = 0; i < x.length/2; i++) {
-                x[i].style.visibility = "hidden";
-                x[i+x.length/2].style.visibility = "visible";
-            }
-        }
-
-        if (document.getElementById("1").checked == true && document.getElementById("2").checked == true ){
-            for (i = 0; i < x.length; i++) {
-                x[i].style.visibility = "visible";
-            }
-
-        }
-        if (document.getElementById("1").checked == false && document.getElementById("2").checked == false ){
-            for (i = 0; i < x.length; i++) {
-                x[i].style.visibility = "hidden";
-            }
-        }
-    }
-</script>
-
 </html>
-
