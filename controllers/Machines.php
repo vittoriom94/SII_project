@@ -16,6 +16,7 @@ use framework\View;
 use models\Machines as MachinesModel;
 use views\Machines as MachinesView;
 use framework\components\DataRepeater as DataRepeater;
+use framework\components\bootstrap\PaginatorBootstrap;
 
 class Machines extends Controller
 {
@@ -30,8 +31,11 @@ class Machines extends Controller
     */
     public function __construct(View $view=null, Model $model=null)
     {
-        $this->view = empty($view) ? $this->getView() : $view;
-        $this->model = empty($model) ? $this->getModel() : $model;
+        //$this->view = empty($view) ? $this->getView() : $view;
+        //$this->model = empty($model) ? $this->getModel() : $model;
+        //parent::__construct($this->view,$this->model);
+        $this->model = $this->getModel();
+        $this->view = $this->getView();
         parent::__construct($this->view,$this->model);
     }
 
@@ -48,9 +52,23 @@ class Machines extends Controller
        // With the help of the framework class Controller, the method render()
         // populates the the block ”User”.
 
-        $machinesList = $this->model->getMachines();
-        $repeater = new DataRepeater($this->view, null ,"Machines", $machinesList);
-        $repeater->render();
+        //$machinesList = $this->model->getMachines();
+        //$repeater = new DataRepeater($this->view, null ,"Machines", $machinesList);
+        //$repeater->render();
+
+        $paginator = new PaginatorBootstrap();
+
+        $paginator->setName("Bottom");
+        $paginator->resultPerPage = 2;
+        $paginator->setModel($this->model);
+
+        $paginator->buildPagination();
+
+        $machines = new DataRepeater($this->view, $this->model, "Machines", null);
+
+        $this->bindComponent($machines);
+        $this->bindComponent($paginator);
+
 
 
     }
