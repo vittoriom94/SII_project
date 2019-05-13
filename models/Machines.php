@@ -60,4 +60,23 @@ class Machines extends Model
         $this->updateResultSet();
         return $machines;
     }
+
+    public function insertMachine($function,$properties){
+        $description = $function ." " . $properties[0];
+        $type = intval($function);
+        $this->sql =
+            <<<SQL
+            start transaction;
+                insert into entity (descrizione, entity_type_id)
+                values ($description,$type);
+                set @id = LAST_INSERT_ID();
+                insert into entities_properties (entity_id,property_id,`value`)
+                values (@id,1,$properties[0]);
+            commit;
+SQL;
+
+
+
+    }
+
 }
