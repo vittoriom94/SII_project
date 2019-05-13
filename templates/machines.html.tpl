@@ -63,6 +63,11 @@
         </tr>
         <!-- END Machines -->
         </tbody>
+        <tfoot>
+        <tr>
+            <td class = "text-center" colspan="9">{PaginatorBootstrap:Bottom}</td>
+        </tr>
+        </tfoot>
     </table>
 </div>
 

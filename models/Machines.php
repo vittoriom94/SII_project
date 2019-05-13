@@ -21,6 +21,30 @@ class Machines extends Model
     public function __construct()
     {
         parent::__construct();
+        $this->sql =
+            <<<SQL
+SELECT
+  e.descrizione,
+  MAX(Case WHEN p.name = 'IDInterno' THEN ep.value END) IDInterno,
+  MAX(Case WHEN p.name = 'IndirizzoIP' THEN ep.value END) IndirizzoIP,
+  MAX(Case WHEN p.name = 'Costruttore' THEN ep.value END) Costruttore,
+  MAX(Case WHEN p.name = 'Modello' THEN ep.value END) Modello,
+  MAX(Case WHEN p.name = 'Anno' THEN ep.value END) Anno,
+  MAX(Case WHEN p.name = 'MarcaCN' THEN ep.value END) MarcaCN,
+  MAX(Case WHEN p.name = 'ModelloCN' THEN ep.value END) ModelloCN,
+  MAX(Case WHEN p.name = 'Versione' THEN ep.value END) Versione,
+  MAX(Case WHEN p.name = 'NoteVersione' THEN ep.value END) NoteVersione,
+  MAX(Case WHEN p.name = 'Anno' THEN ep.value END) Anno,
+  MAX(Case WHEN p.name = 'NomeLavorazioni' THEN ep.value END) NomeLavorazioni,
+  MAX(Case WHEN p.name = 'NumeroTx' THEN ep.value END) NumeroTx,
+  MAX(Case WHEN p.name = 'NumeroRot' THEN ep.value END) NumeroRot
+FROM entity e
+    JOIN entities_properties ep ON e.id_entity = ep.entity_id 
+    JOIN property p ON ep.property_id = p.id_property 
+GROUP BY e.descrizione
+SQL;
+        $this->updateResultSet();
+
     }
 
     /**
@@ -33,33 +57,6 @@ class Machines extends Model
 
     }
 
-    public function getMachines(){
-        //TO DO
-
-        $this->sql = "SET @sql = NULL";
-        $this->updateResultSet();
-        $this->sql = "SELECT GROUP_CONCAT( ".
-            "DISTINCT CONCAT('max(case when p.name = ''', name, ''' then ep.value end) ', name)) ".
-            "INTO @sql ".
-            "FROM property p ";
-        $this->updateResultSet();
-        $this->sql = "SET @sql = CONCAT('SELECT ".
-            "e.descrizione, ".
-            "', @sql, ' ".
-            "FROM entity e ".
-            "JOIN entities_properties ep ON e.id_entity = ep.entity_id ".
-            "JOIN property p ON ep.property_id = p.id_property ".
-            "GROUP BY e.descrizione')";
-        $this->updateResultSet();
-        $this->sql = "PREPARE stmt FROM @sql";
-        $this->updateResultSet();
-        $this->sql = "EXECUTE stmt";
-        $this->updateResultSet();
-        $machines = $this->getResultSet();
-        //$this->sql = "DEALLOCATE PREPARE stmt";
-        //$this->updateResultSet();
-        return $machines;
-    }
 
     public function insertMachine($function,$properties){
         $description = $function ." " . $properties[0];

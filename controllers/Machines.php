@@ -61,11 +61,10 @@ class Machines extends Controller
         $paginator->setName("Bottom");
         $paginator->resultPerPage = 2;
         $paginator->setModel($this->model);
+
         $paginator->buildPagination();
 
-        //$machines = new DataRepeater($this->view, $this->model, "Machine", null);
-        $machinesList = $this->model->getMachines();
-        $machines = new DataRepeater($this->view, null, "Machine", $machinesList);
+        $machines = new DataRepeater($this->view, $this->model, "Machines", null);
 
         $this->bindComponent($machines);
         $this->bindComponent($paginator);
