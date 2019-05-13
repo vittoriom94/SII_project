@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <title> TEAM1 - Facilty Management</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -66,6 +62,7 @@
     </table>
 </div>
 
+<a href="form">Clicca qui per aggiungere un altra macchina</a>
 
 </body>
 

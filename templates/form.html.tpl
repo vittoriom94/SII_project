@@ -1,11 +1,10 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01
-Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
     <title>PAGINA CARICAMENTO DATI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -79,7 +78,7 @@ Transitional//EN"
 
                     <tr>
                         <td>Numero Root</td>
-                        <td><input type="text" id="campo_numeroroot" name="campo_numeroroot" class="form" value="">
+                        <td><input type="text" id="campo_numeroroot" name="campo_numerorot" class="form" value="">
                         </td>
                     </tr>
 
@@ -94,5 +93,7 @@ Transitional//EN"
         </td>
     </tr>
 </table>
+<a href=machines>Clicca qui per vedere le macchine presenti </a>
+
 </body>
 </html>

@@ -1,18 +1,10 @@
 <?php
-/**
- * Class Login
- *
- * {ModelResponsability}
- *
- * @package models\common
- * @category Application Model
- * @author  {AuthorName} - {AuthorEmail}
- */
+
 namespace models\common;
 
 use framework\Model;
 
-class Login extends Model
+class Form extends Model
 {
     /**
      * Object constructor.

@@ -1,17 +1,4 @@
 <?php
-/**
- * Class Login
- *
- * Generic Login Form Controller
- *
- * @package controllers\common
- * @category Application Controller
- * @author  Rosario Carvello - rosario.carvello@gmail.com
- *
- * @uses \framework\User
- * @uses framework\classes\ChiperService
- *
- */
 
 namespace controllers;
 
@@ -28,12 +15,6 @@ class Form extends Controller
     protected $view;
     protected $model;
 
-    /**
-     * Object constructor.
-     *
-     * @param View $view
-     * @param Model $mode
-     */
     public function __construct(View $view=null, Model $model=null)
     {
         $this->view = empty($view) ? $this->getView() : $view;
@@ -41,50 +22,64 @@ class Form extends Controller
         parent::__construct($this->view,$this->model);
     }
 
-    /**
-     * Autorun method.
-     *
-     * @param mixed|null $parameters Parameters to manage
-     *
-     */
     protected function autorun($parameters = null)
     {
         if (isset($_POST["form_inserisci"])) {
+            $p = $this->valida();
             $funzione = $_POST["campo_funzione"];
-            $properties[0] = $_POST["campo_idinterno"];
-            //$indirizzoip = $_POST["campo_indirizzoip"];
-            //$indirizzoip = $_POST["campo_indirizzoip"];
-            //$this->model->login($email,$password);
-            // Funzione unico parametro il resto in un array
-            $this->model->insertMachine($funzione,$properties);
+            $this->model->insertMachine($funzione,$p);
         }
     }
-    /**
-     * Creates cookie for the login credentials if user
-     * check remember me.
-     *
-     * Note:
-     * It uses ChiperService for Cookie encryption.
-     *
-     * @uses ChiperService
-     */
 
 
-    /**
-     * Inizialize the View by loading static design of /common/login.html.tpl
-     * managed by views\common\Login class
-     *
-     */
+    protected function valida(){
+        $p[0] = $_POST["campo_idinterno"];
+
+        if(isset($_POST["campo_indirizzoip"])){
+            $p[1] = $_POST["campo_indirizzoip"];
+        }
+        if(isset($_POST["campo_costruttore"])){
+            $p[2] = $_POST["campo_costruttore"];
+        }
+        if(isset($_POST["campo_modello"])){
+            $p[3] = $_POST["campo_modello"];
+        }
+        if(isset($_POST["campo_costruttore"])){
+            $p[4] = $_POST["campo_costruttore"];
+        }
+        if(isset($_POST["campo_anno"])){
+            $p[5] = $_POST["campo_anno"];
+        }
+        if(isset($_POST["campo_marcacn"])){
+            $p[6] = $_POST["campo_marcacn"];
+        }
+        if(isset($_POST["campo_modellocn"])){
+            $p[7] = $_POST["campo_modellocn"];
+        }
+        if(isset($_POST["campo_versione"])){
+            $p[8] = $_POST["campo_versione"];
+        }
+        if(isset($_POST["campo_noteversione"])){
+            $p[9] = $_POST["campo_noteversione"];
+        }
+        if(isset($_POST["campo_notelavorazioni"])){
+            $p[10] = $_POST["campo_notelavorazioni"];
+        }
+        if(isset($_POST["campo_numerotx"])){
+            $p[11] = $_POST["campo_numerotx"];
+        }
+        if(isset($_POST["campo_rot"])){
+            $p[12] = $_POST["campo_rot"];
+        }
+        return $p;
+    }
+
     public function getView()
     {
         $view = new FormView("Form");
         return $view;
     }
 
-    /**
-     * Inizialize the Model by loading models\common\Login class
-     *
-     */
     public function getModel()
     {
         $model = new MachinesModel();
