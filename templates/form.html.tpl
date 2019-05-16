@@ -2,20 +2,20 @@
 
 <head>
     <title>PAGINA CARICAMENTO DATI</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-<table border="0">
+<table border="1" align="center">
     <tr>
         <td align="center">Inserisci i nuovi macchinari</td>
     </tr>
     <tr>
         <td>
             <table>
-                <form method="post" id="inserimento_form" name="inserimento_form">
+                <form method="post" id="inserimento_form" name="inserimento_form" onsubmit="return(validate());">
                     <tr>
                         <td>Funzione</td>
                         <td><input type="text" id="campo_funzione" name="campo_funzione" class="form" value="" required></td>
@@ -42,7 +42,7 @@
                     </tr>
                     <tr>
                         <td>Anno</td>
-                        <td><input type="text" id="campo_anno" name="campo_anno" class="form" value="">
+                        <td><input type="date" id="campo_anno" name="campo_anno" class="form" value="">
                         </td>
                     </tr>
                     <tr>
@@ -85,7 +85,7 @@
                     <tr>
                         <td></td>
                         <td align="right">
-                            <input class="btn btn-success btn-lg" type="submit" id="form_inserisci"  class="Button" name="form_inserisci">
+                            <input class="btn btn-success btn-lg"  type="submit"  id="form_inserisci"   class="Button" name="form_inserisci" >
                         </td>
                     </tr>
                 </form>
@@ -94,6 +94,26 @@
     </tr>
 </table>
 <a href=machines>Clicca qui per vedere le macchine presenti </a>
-
 </body>
 </html>
+
+
+<script >
+
+    function validate() {
+        var campo_funzione = document.getElementById("campo_funzione").value;
+
+        if(!isNaN(campo_funzione)){
+            return  true;
+        }
+        else{
+            alert("Hai inserito una stringa")
+            return false;
+        }
+
+
+
+    }
+
+
+</script>
