@@ -2,11 +2,55 @@
 
 <head>
     <title>PAGINA CARICAMENTO DATI</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+<style>
+    /* Dropdown Button */
+    .dropbtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 1px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
 
+    /* Dropdown button on hover & focus */
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd}
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    .show {display:block;}
+</style>
 <body>
 <table border="1" align="center">
     <tr>
@@ -18,7 +62,14 @@
                 <form method="post" id="inserimento_form" name="inserimento_form" onsubmit="return(validate());">
                     <tr>
                         <td>Funzione</td>
-                        <td><input type="text" id="campo_funzione" name="campo_funzione" class="form" value="" required></td>
+                        <td>
+                            <div class="dropdown">
+                                <button onclick="menu_tendina()" class="dropbtn">Funzione</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#" id="campo_funzione">{funzione}</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>ID Interno</td>
@@ -67,7 +118,7 @@
                     </tr>
                     <tr>
                         <td>Nome Lavorazioni</td>
-                        <td><input type="text" id="campo_nomelavorazioni" name="campo_nomelavorazioni" class="form" value="">
+                        <td><input type="textarea" id="campo_nomelavorazioni" name="campo_nomelavorazioni" class="form" value="">
                         </td>
                     </tr>
                     <tr>
@@ -101,19 +152,98 @@
 <script >
 
     function validate() {
-        var campo_funzione = document.getElementById("campo_funzione").value;
 
-        if(!isNaN(campo_funzione)){
+        var campo_idinterno = document.getElementById("campo_idinterno").value;
+        var campo_indirizzoip = document.getElementById("campo_indirizzoip").value;
+        var campo_costruttore = document.getElementById("campo_costruttore").value;
+        var campo_modello = document.getElementById("campo_modello").value;
+        var campo_marca = document.getElementById("campo_marca").value;
+        var campo_modellocn = document.getElementById("campo_modellocn").value;
+        var campo_versione = document.getElementById("campo_versione").value;
+        var campo_numeroroot = document.getElementById("campo_numeroroot").value;
+        var campo_numerotx = document.getElementById("campo_numerotx").value;
+
+        if(!isNaN(campo_idinterno)){
+            alert("Hai inserito un valore incorretto");
+            return  false;
+        }
+        else{
+            return true;
+        }
+
+        if(!isNaN(campo_costruttore)){
+            alert("Hai inserito un valore incorretto");
+            return  false;
+        }
+        else{
+            return true;
+        }
+
+        if(!isNaN(campo_modello)){
+            alert("Hai inserito un valore incorretto");
+            return  false;
+        }
+        else{
+            return true;
+        }
+        if(!isNaN(campo_marca)){
+            alert("Hai inserito un valore incorretto");
+            return  false;
+        }
+        else{
+            return true;
+        }
+        if(!isNaN(campo_modellocn)){
+            alert("Hai inserito un valore incorretto");
+            return  false;
+        }
+        else{
+            return true;
+        }
+
+
+        if(!isNaN(campo_versione)){
+            alert("Hai inserito un valore incorretto");
+            return  false;
+        }
+        else{
+            return true;
+        }
+
+        if(!isNaN(campo_numeroroot)){
             return  true;
         }
         else{
-            alert("Hai inserito una stringa")
+            alert("Hai inserito un valore incorretto");
             return false;
         }
 
 
+        if(!isNaN(campo_numerotx)){
+            return  true;
+        }
+        else{
+            alert("Hai inserito un valore incorretto");
+            return false;
+        }
 
     }
 
+    function menu_tendina() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
 
 </script>
+
