@@ -63,12 +63,12 @@
                     <tr>
                         <td>Funzione</td>
                         <td>
-                            <div class="dropdown">
-                                <button onclick="menu_tendina()" class="dropbtn">Funzione</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <a href="#" id="campo_funzione">{funzione}</a>
-                                </div>
-                            </div>
+                            <select>
+                                <!-- BEGIN tendina -->
+                                <option value="{id_funzione}">{funzione}</option>
+                                <!-- END tendina -->
+                            </select>
+
                         </td>
                     </tr>
                     <tr>
@@ -117,8 +117,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Nome Lavorazioni</td>
-                        <td><input type="textarea" id="campo_nomelavorazioni" name="campo_nomelavorazioni" class="form" value="">
+                        <td>Note Lavorazioni</td>
+                        <td><input type="textarea" id="campo_notelavorazioni" name="campo_nomelavorazioni" class="form" value="">
                         </td>
                     </tr>
                     <tr>
@@ -128,7 +128,7 @@
                     </tr>
 
                     <tr>
-                        <td>Numero Root</td>
+                        <td>Numero Rot</td>
                         <td><input type="text" id="campo_numeroroot" name="campo_numerorot" class="form" value="">
                         </td>
                     </tr>
@@ -136,7 +136,8 @@
                     <tr>
                         <td></td>
                         <td align="right">
-                            <input class="btn btn-success btn-lg"  type="submit"  id="form_inserisci"   class="Button" name="form_inserisci" >
+                            <input class="btn btn-success btn-lg"  type="submit"  id="form_inserisci"   class="Button" name="form_inserisci" value="Inserisci" >
+                            <input class="btn btn-success btn-lg"  type="submit"  id="form_cancella"   class="Button" name="form_cancella" value="Cancella">
                         </td>
                     </tr>
                 </form>
@@ -144,10 +145,18 @@
         </td>
     </tr>
 </table>
+
+
+<div>
+    <!-- BEGIN Messaggio -->
+    {messaggio_errore_cancellazione}
+    <!-- END Messaggio -->
+</div>
+
+
 <a href=machines>Clicca qui per vedere le macchine presenti </a>
 </body>
 </html>
-
 
 <script >
 
@@ -160,7 +169,7 @@
         var campo_marca = document.getElementById("campo_marca").value;
         var campo_modellocn = document.getElementById("campo_modellocn").value;
         var campo_versione = document.getElementById("campo_versione").value;
-        var campo_numeroroot = document.getElementById("campo_numeroroot").value;
+        var campo_numerorot = document.getElementById("campo_numerorot").value;
         var campo_numerotx = document.getElementById("campo_numerotx").value;
 
         if(!isNaN(campo_idinterno)){
@@ -210,14 +219,13 @@
             return true;
         }
 
-        if(!isNaN(campo_numeroroot)){
+        if(!isNaN(campo_numerorot)){
             return  true;
         }
         else{
             alert("Hai inserito un valore incorretto");
             return false;
         }
-
 
         if(!isNaN(campo_numerotx)){
             return  true;
@@ -227,22 +235,6 @@
             return false;
         }
 
-    }
-
-    function menu_tendina() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
     }
 
 </script>

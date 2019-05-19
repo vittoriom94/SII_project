@@ -24,11 +24,26 @@ class Form extends Controller
 
     protected function autorun($parameters = null)
     {
+        $this->view->errore_cancellazione("");
+        $result = $this->model->getEntityTypes();
+        $this->view->set_tendina($result);
         if (isset($_POST["form_inserisci"])) {
             $p = $this->valida();
             $funzione = $_POST["campo_funzione"];
             $this->model->insertMachine($funzione,$p);
         }
+        if (isset($_POST["form_cancella"])) {
+
+            if($this->checkMachineExists($_POST["campo_idinterno"])){
+                $this->model->deleteMachine($_POST["campo_idinterno"]);
+            }
+            else{
+                $this->view->errore_cancellazione("Errore nella cancellazione, non esiste la macchina!");
+            }
+        }
+
+
+
     }
 
     protected function checkMachineExists($machine_id){
