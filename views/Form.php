@@ -30,4 +30,27 @@ class Form extends View
 
     }
 
+
+    public function errore_cancellazione($messaggio){
+
+        $this->openBlock("Messaggio");
+        $this->setVar("messaggio_errore_cancellazione",$messaggio);
+        $this->parseCurrentBlock();
+        $this->setBlock();
+
+    }
+
+    public function set_tendina($result){
+
+        $this->openBlock("tendina");
+        while ($temp = $result->fetch_object()) {
+            $this->setVar("funzione", $temp->name);
+            $this->setVar("id_funzione", $temp->id_entity_type);
+            $this->parseCurrentBlock();
+        }
+        $this->setBlock();
+
+    }
+
+
 }
