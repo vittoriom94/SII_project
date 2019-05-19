@@ -11,6 +11,7 @@
 namespace models;
 
 use framework\Model;
+use util\SqlUtils;
 
 class Machines extends Model
 {
@@ -56,20 +57,62 @@ SQL;
     {
 
     }
+    /* Il result set è una singola riga che contiene 1 se il machine_id esiste, altrimenti 0 */
+    public function queryMachineExists($machine_id){
 
-
+        $this->sql = "SELECT EXISTS(SELECT * from entities_properties WHERE property_id=1 and `value`='$machine_id')";
+        $this->updateResultSet();
+        return $this->getResultSet();
+    }
     public function insertMachine($function,$properties){
-        $description = $function ." " . $properties[0];
+        $description = $function ." " . $properties[1];
         $type = intval($function);
+        $queries = array();
 
-        //$this->begin_transaction();
-        $this->sql = "insert into entity (descrizione, entity_type_id) values ('$description', $type)";
+        $query = "insert into entity (descrizione, entity_type_id) values ('$description', $type)";
+        $queries[] = $query;
+        $query = "set @id = LAST_INSERT_ID()";
+        $queries[] = $query;
+        $query = "insert into entities_properties (entity_id,property_id,`value`) values ";
+        for ($i = 0;$i<max(array_keys($properties));$i++){
+            if($properties[$i] != NULL){
+                $query = $query . "(@id, $i, '$properties[$i]'),";
+            }
+        }
+        $query = substr($query,0,-1);
+        $queries[] = $query;
+
+        SqlUtils::atomic($queries,$this);
+
+    }
+
+    public function deleteMachine($machine_id){
+
+        $queries = array();
+        $query = "select entity_id into @id from entities_properties where property_id=1 and `value`='$machine_id'";
+        $queries[] = $query;
+	    $query = "delete from entities_properties where entity_id=@id";
+        $queries[] = $query;
+        $query = "delete from entity where id_entity=@id";
+        $queries[] = $query;
+        SqlUtils::atomic($queries,$this);
+    }
+
+    public function editMachine($entity_id, $properties){
+
+    }
+
+    public function getEntityTypes(){
+        $this->sql = "select * from entity_type";
         $this->updateResultSet();
-        $this->sql = "set @id = LAST_INSERT_ID()";
+        return $this->getResultSet();
+    }
+
+    public function getTypeProperties($type){
+        $type = intval($type);
+        $this->sql = "select property_id from entities_type_properties where entity_type_id = $type";
         $this->updateResultSet();
-        $this->sql = "insert into entities_properties (entity_id,property_id,`value`) values (@id, 1, '$properties[0]')";
-        $this->updateResultSet();
-        //$this->commit();
+        return $this->getResultSet();
     }
 
 }

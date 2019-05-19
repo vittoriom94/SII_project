@@ -31,45 +31,54 @@ class Form extends Controller
         }
     }
 
+    protected function checkMachineExists($machine_id){
+        $result = $this->model->queryMachineExists($machine_id);
+        $exists = $result->fetch_object();
+        if($exists){
+            return TRUE;
+        }
+        return FALSE;
+
+    }
 
     protected function valida(){
-        $p[0] = $_POST["campo_idinterno"];
+        $p[1] = $_POST["campo_idinterno"];
 
         if(isset($_POST["campo_indirizzoip"])){
-            $p[1] = $_POST["campo_indirizzoip"];
+            $p[2] = $_POST["campo_indirizzoip"];
         }
         if(isset($_POST["campo_costruttore"])){
-            $p[2] = $_POST["campo_costruttore"];
+            $p[3] = $_POST["campo_costruttore"];
         }
         if(isset($_POST["campo_modello"])){
-            $p[3] = $_POST["campo_modello"];
+            $p[4] = $_POST["campo_modello"];
         }
-        if(isset($_POST["campo_costruttore"])){
-            $p[4] = $_POST["campo_costruttore"];
+        if(isset($_POST["campo_costruttore"])){ // ERRORE????
+            $p[5] = $_POST["campo_costruttore"];
         }
         if(isset($_POST["campo_anno"])){
-            $p[5] = $_POST["campo_anno"];
+            $p[6] = $_POST["campo_anno"];
         }
         if(isset($_POST["campo_marcacn"])){
-            $p[6] = $_POST["campo_marcacn"];
+            $p[7] = $_POST["campo_marcacn"];
         }
         if(isset($_POST["campo_modellocn"])){
-            $p[7] = $_POST["campo_modellocn"];
+            $p[8] = $_POST["campo_modellocn"];
         }
         if(isset($_POST["campo_versione"])){
-            $p[8] = $_POST["campo_versione"];
+            $p[9] = $_POST["campo_versione"];
         }
         if(isset($_POST["campo_noteversione"])){
-            $p[9] = $_POST["campo_noteversione"];
+            $p[10] = $_POST["campo_noteversione"];
         }
         if(isset($_POST["campo_notelavorazioni"])){
-            $p[10] = $_POST["campo_notelavorazioni"];
+            $p[11] = $_POST["campo_notelavorazioni"];
         }
         if(isset($_POST["campo_numerotx"])){
-            $p[11] = $_POST["campo_numerotx"];
+            $p[12] = $_POST["campo_numerotx"];
         }
         if(isset($_POST["campo_rot"])){
-            $p[12] = $_POST["campo_rot"];
+            $p[13] = $_POST["campo_rot"];
         }
         return $p;
     }
