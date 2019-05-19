@@ -98,8 +98,9 @@ SQL;
         SqlUtils::atomic($queries,$this);
     }
 
-    public function editMachine($entity_id, $properties){
-
+    public function editMachine($machine_id, $function, $properties){
+        $this->deleteMachine($machine_id);
+        $this->insertMachine($function,$properties);
     }
 
     public function getEntityTypes(){
