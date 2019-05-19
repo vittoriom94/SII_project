@@ -68,8 +68,8 @@ class Form extends Controller
         if(isset($_POST["campo_numerotx"])){
             $p[11] = $_POST["campo_numerotx"];
         }
-        if(isset($_POST["campo_rot"])){
-            $p[12] = $_POST["campo_rot"];
+        if(isset($_POST["campo_root"])){
+            $p[12] = $_POST["campo_root"];
         }
         return $p;
     }
