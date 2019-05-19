@@ -63,7 +63,7 @@
                     <tr>
                         <td>Funzione</td>
                         <td>
-                            <select>
+                            <select name="campo_funzione">
                                 <!-- BEGIN tendina -->
                                 <option value="{id_funzione}">{funzione}</option>
                                 <!-- END tendina -->
