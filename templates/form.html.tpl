@@ -2,8 +2,11 @@
 
 <head>
     <title>PAGINA CARICAMENTO DATI</title>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <style>
     /* Dropdown Button */
@@ -59,7 +62,7 @@
     <tr>
         <td>
             <table>
-                <form method="post" id="inserimento_form" name="inserimento_form" onsubmit="return(validate());">
+                <form method="post" id="form" name="form" onsubmit="return(validate());">
                     <tr>
                         <td>Funzione</td>
                         <td>
@@ -68,7 +71,6 @@
                                 <option value="{id_funzione}">{funzione}</option>
                                 <!-- END tendina -->
                             </select>
-
                         </td>
                     </tr>
                     <tr>
@@ -137,6 +139,7 @@
                         <td></td>
                         <td align="right">
                             <input class="btn btn-success btn-lg"  type="submit"  id="form_inserisci"   class="Button" name="form_inserisci" value="Inserisci" >
+                            <input class="btn btn-success btn-lg"  type="submit"  id="form_modifica"   class="Button" name="form_inserisci" value="Modifica" >
                             <input class="btn btn-success btn-lg"  type="submit"  id="form_cancella"   class="Button" name="form_cancella" value="Cancella">
                         </td>
                     </tr>
@@ -146,13 +149,11 @@
     </tr>
 </table>
 
-
 <div>
     <!-- BEGIN Messaggio -->
     {messaggio_errore_cancellazione}
     <!-- END Messaggio -->
 </div>
-
 
 <a href=machines>Clicca qui per vedere le macchine presenti </a>
 </body>

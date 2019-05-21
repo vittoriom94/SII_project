@@ -27,6 +27,14 @@ class Form extends Controller
         $this->view->errore_cancellazione("");
         $result = $this->model->getEntityTypes();
         $this->view->set_tendina($result);
+
+        if (isset($_POST["form_modifica"])) {
+            $p = $this->valida();
+            $funzione = $_POST["campo_funzione"];
+            $this->model->editMachine($funzione,$p);
+        }
+
+
         if (isset($_POST["form_inserisci"])) {
             $p = $this->valida();
             $funzione = $_POST["campo_funzione"];
