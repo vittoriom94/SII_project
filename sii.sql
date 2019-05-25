@@ -238,19 +238,19 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mydb`;
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (1, 'ID Interno');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (2, 'Indirizzo IP');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (1, 'IDInterno');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (2, 'IndirizzoIP');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (3, 'Costruttore');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (4, 'Modello');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (5, 'Anno');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (6, 'Marca CN');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (7, 'Modello CN');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (6, 'MarcaCN');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (7, 'ModelloCN');
 INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (8, 'Versione');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (9, 'Note Versione');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (10, 'Anno');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (11, 'Nome Lavorazioni');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (12, 'Numero Tx');
-INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (13, 'Numero Rot');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (9, 'NoteVersione');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (10, 'Anno2');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (11, 'NomeLavorazioni');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (12, 'NumeroTx');
+INSERT INTO `mydb`.`property` (`id_property`, `name`) VALUES (13, 'NumeroRot');
 
 COMMIT;
 

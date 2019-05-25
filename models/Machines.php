@@ -35,7 +35,7 @@ SELECT
   MAX(Case WHEN p.name = 'ModelloCN' THEN ep.value END) ModelloCN,
   MAX(Case WHEN p.name = 'Versione' THEN ep.value END) Versione,
   MAX(Case WHEN p.name = 'NoteVersione' THEN ep.value END) NoteVersione,
-  MAX(Case WHEN p.name = 'Anno2' THEN ep.value END) Anno,
+  MAX(Case WHEN p.name = 'Anno2' THEN ep.value END) Anno2,
   MAX(Case WHEN p.name = 'NomeLavorazioni' THEN ep.value END) NomeLavorazioni,
   MAX(Case WHEN p.name = 'NumeroTx' THEN ep.value END) NumeroTx,
   MAX(Case WHEN p.name = 'NumeroRot' THEN ep.value END) NumeroRot

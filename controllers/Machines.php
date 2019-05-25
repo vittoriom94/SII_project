@@ -56,13 +56,13 @@ class Machines extends Controller
         //$repeater = new DataRepeater($this->view, null ,"Machines", $machinesList);
         //$repeater->render();
         //commento ora
-        $paginator = new PaginatorBootstrap();
+        //$paginator = new PaginatorBootstrap();
 
-        $paginator->setName("Bottom");
-        $paginator->resultPerPage = 10;
-        $paginator->setModel($this->model);
+        //$paginator->setName("Bottom");
+        //$paginator->resultPerPage = 2;
+        //$paginator->setModel($this->model);
 
-        $paginator->buildPagination();
+        //$paginator->buildPagination();
 
         $machines = new DataRepeater($this->view, $this->model, "Machines", null);
 
