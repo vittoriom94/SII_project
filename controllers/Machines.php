@@ -55,11 +55,11 @@ class Machines extends Controller
         //$machinesList = $this->model->getMachines();
         //$repeater = new DataRepeater($this->view, null ,"Machines", $machinesList);
         //$repeater->render();
-
+        //commento ora
         $paginator = new PaginatorBootstrap();
 
         $paginator->setName("Bottom");
-        $paginator->resultPerPage = 2;
+        $paginator->resultPerPage = 10;
         $paginator->setModel($this->model);
 
         $paginator->buildPagination();
@@ -67,7 +67,7 @@ class Machines extends Controller
         $machines = new DataRepeater($this->view, $this->model, "Machines", null);
 
         $this->bindComponent($machines);
-        $this->bindComponent($paginator);
+        //$this->bindComponent($paginator);
 
 
 
@@ -80,7 +80,8 @@ class Machines extends Controller
     */
     public function getView()
     {
-        $view = new MachinesView("/machines");
+        //$view = new MachinesView("/machines");
+        $view = new MachinesView("/datatable");
         return $view;
     }
 

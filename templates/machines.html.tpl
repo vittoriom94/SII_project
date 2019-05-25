@@ -77,7 +77,7 @@ bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
     </table>
 </div>
 
-<a href="form">Clicca qui per aggiungere un altra macchina</a>
+<a href="form">Clicca qui per aggiungere un'altra macchina</a>
 
 
 <!-- Shared code 3.4.2: jQuery (necessary for Bootstrap's JavaScript plugins) -->
