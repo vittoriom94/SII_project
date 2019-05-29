@@ -24,7 +24,7 @@ class Machines extends View
     {
         if (empty($tplName))
             /*$tplName = "/machines";*/
-            $tplName = "/datatable";
+            $tplName = "/machines";
         parent::__construct($tplName);
     }
     public function setMachines($machinesResultSet){

@@ -4,6 +4,6 @@ namespace models;
 
 use framework\Model;
 
-class HomeAnalista extends Model
+class Home extends Model
 {
 }

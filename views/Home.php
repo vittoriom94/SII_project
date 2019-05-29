@@ -7,12 +7,12 @@ namespace views;
 
 use framework\View;
 
-class HomeAnalista extends View
+class Home extends View
 {
     public function __construct($tplName = null)
     {
         if (empty($tplName))
-            $tplName = "/home_analista";
+            $tplName = "/home";
         parent::__construct($tplName);
 
 

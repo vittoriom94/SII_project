@@ -39,7 +39,7 @@ class Maintenance extends Controller
     public function getView()
     {
         //$view = new MachinesView("/machines");
-        $view = new MaintenanceView("/datatable_maintenance");
+        $view = new MaintenanceView("/maintenance");
         return $view;
     }
 

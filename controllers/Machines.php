@@ -81,7 +81,7 @@ class Machines extends Controller
     public function getView()
     {
         //$view = new MachinesView("/machines");
-        $view = new MachinesView("/datatable");
+        $view = new MachinesView("/machines");
         return $view;
     }
 

@@ -5,12 +5,12 @@ namespace controllers;
 use framework\Controller;
 use framework\Model;
 use framework\View;
-use models\HomeAnalista as HomeAnalistaModel;
-use views\HomeAnalista as HomeAnalistaView;
+use models\Home as HomeModel;
+use views\Home as HomeView;
 use controllers\manufacturing\NavigationBar;
 
 
-class HomeAnalista extends Controller
+class Home extends Controller
 {
     protected $view;
     protected $model;
@@ -33,9 +33,9 @@ class HomeAnalista extends Controller
         $this->bindController($maintenance);
     }
     public function getView(){
-        return new HomeAnalistaView("/home_analista");
+        return new HomeView("/home");
     }
     public function getModel(){
-        return new HomeAnalistaModel();
+        return new HomeModel();
     }
 }

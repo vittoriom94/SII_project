@@ -442,7 +442,7 @@ abstract class Controller
         $variable = str_replace(APP_CONTROLLERS_PATH . "\\", "", get_class($childController));
         $variable = "Controller:" . $variable;
         $userRole = $user->getRole();
-        if (!in_array($userRole, $this->roleBasedACL)){
+        if (!in_array($userRole, $this->roleBasedACL) && $userRole != ADMIN_ROLE_ID){
             $this->view->setVar($variable,"");
         } else {
             $this->bindController($childController);
