@@ -438,14 +438,15 @@ abstract class Controller
 
     public function checkPermissionsAndBind(Controller $childController)
     {
-        $user = $this->restrictToAuthentication(null,null,null);
+        $user = $childController->restrictToAuthentication(null,null,null);
         $variable = str_replace(APP_CONTROLLERS_PATH . "\\", "", get_class($childController));
         $variable = "Controller:" . $variable;
         $userRole = $user->getRole();
-        if (!in_array($userRole, $this->roleBasedACL) && $userRole != ADMIN_ROLE_ID){
-            $this->view->setVar($variable,"");
-        } else {
+
+        if(empty($childController->roleBasedACL) || in_array($userRole,$childController->roleBasedACL) || $userRole == ADMIN_ROLE_ID){
             $this->bindController($childController);
+        } else {
+            $this->view->setVar($variable,"");
         }
     }
 }

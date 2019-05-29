@@ -20,7 +20,7 @@ use framework\View;
 
 use framework\User as  LoginModel;
 use framework\classes\ChiperService;
-use util\ReturnLink;
+use util\RoleUtils;
 use views\common\Login as LoginView;
 
 class Login extends Controller
@@ -58,7 +58,7 @@ class Login extends Controller
             $password = $_POST["password"];
             $this->model->login($email,$password);
             if ($this->model->isLogged()) {
-               $return_link = ReturnLink::$getReturnLink[$this->model->getRole()];
+               $return_link = RoleUtils::$getReturnLink[$this->model->getRole()];
                if(isset($return_link)){
                    $_GET["return_link"] = $return_link;
                }

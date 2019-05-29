@@ -4,12 +4,12 @@ namespace views;
 
 use framework\View;
 
-class Maintenance extends View
+class MaintenanceUnplannedMachines extends View
 {
     public function __construct($tplName = null)
     {
         if (empty($tplName))
-            $tplName = "/maintenance";
+            $tplName = "/maintenance_unplanned_machines";
         parent::__construct($tplName);
     }
 

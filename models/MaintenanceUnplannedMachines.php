@@ -5,7 +5,7 @@ namespace models;
 
 use framework\Model;
 
-class Maintenance extends Model {
+class MaintenanceUnplannedMachines extends Model {
 
     public function getMaintenance(){
 

@@ -6,9 +6,9 @@ use framework\components\DataRepeater;
 use framework\Controller;
 use framework\Model;
 use framework\View;
-use views\Maintenance as MaintenanceView;
-use models\Maintenance as MaintenanceModel;
-class Maintenance extends Controller
+use views\MaintenanceUnplannedMachines as MUMView;
+use models\MaintenanceUnplannedMachines as MUMModel;
+class MaintenanceUnplannedMachines extends Controller
 {
 
     public function __construct(View $view=null, Model $model=null)
@@ -39,7 +39,7 @@ class Maintenance extends Controller
     public function getView()
     {
         //$view = new MachinesView("/machines");
-        $view = new MaintenanceView("/maintenance");
+        $view = new MUMView("/maintenance_unplanned_machines");
         return $view;
     }
 
@@ -49,7 +49,7 @@ class Maintenance extends Controller
      */
     public function getModel()
     {
-        $model = new MaintenanceModel();
+        $model = new MUMModel();
         return $model;
     }
 }

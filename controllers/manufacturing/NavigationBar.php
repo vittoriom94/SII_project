@@ -10,7 +10,6 @@ class NavigationBar extends Controller
 
     protected function autorun($parameters = null)
     {
-
         $this->view = new NavigationBarView();
     }
 }

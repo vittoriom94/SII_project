@@ -5,12 +5,12 @@ namespace controllers;
 use framework\Controller;
 use framework\Model;
 use framework\View;
-use models\Home as HomeModel;
-use views\Home as HomeView;
+use models\MaintenanceUnplanned as MaintenanceUnplannedModel;
+use views\MaintenanceUnplanned as MaintenanceUnplannedView;
 use controllers\manufacturing\NavigationBar;
 
 
-class Home extends Controller
+class MaintenanceUnplanned extends Controller
 {
     protected $view;
     protected $model;
@@ -28,13 +28,14 @@ class Home extends Controller
         $this->checkPermissionsAndBind($navigation);
 
 
-        $machine = new Machines();
-        $this->bindController($machine);
+        $maintenance = new MaintenanceUnplannedMachines();
+        $this->bindController($maintenance);
+
     }
     public function getView(){
-        return new HomeView("/home");
+        return new MaintenanceUnplannedView("/maintenance_unplanned");
     }
     public function getModel(){
-        return new HomeModel();
+        return new MaintenanceUnplannedModel();
     }
 }
