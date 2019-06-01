@@ -155,7 +155,7 @@
     <!-- END Messaggio -->
 </div>
 
-<a href=machines>Clicca qui per vedere le macchine presenti </a>
+<a href=home>Clicca qui per vedere le macchine presenti </a>
 </body>
 </html>
 

@@ -13,7 +13,7 @@ namespace views;
 
 use framework\View;
 
-class Form extends View
+class MachinesForm extends View
 {
 
     /**
@@ -24,14 +24,14 @@ class Form extends View
     public function __construct($tplName = null)
     {
         if (empty($tplName))
-            $tplName = "/Form";
+            $tplName = "/Machines_form";
         parent::__construct($tplName);
 
 
     }
 
 
-    public function errore_cancellazione($messaggio){
+    public function deleteError($messaggio){
 
         $this->openBlock("Messaggio");
         $this->setVar("messaggio_errore_cancellazione",$messaggio);
@@ -40,7 +40,7 @@ class Form extends View
 
     }
 
-    public function set_tendina($result){
+    public function setDropdown($result){
 
         $this->openBlock("tendina");
         while ($temp = $result->fetch_object()) {

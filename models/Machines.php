@@ -12,7 +12,9 @@ namespace models;
 
 use framework\Model;
 use util\SqlUtils;
-
+/**
+ * Classe contenente le query riguardanti le macchine
+ */
 class Machines extends Model
 {
     /**
@@ -57,13 +59,23 @@ SQL;
     {
 
     }
-    /* Il result set è una singola riga che contiene 1 se il machine_id esiste, altrimenti 0 */
+    /**
+     * Controlla se una macchina esiste
+     * @param string $machine_id Id della macchina da cercare
+     * @return 1 se esiste, 0 altrimenti
+     */
     public function queryMachineExists($machine_id){
 
         $this->sql = "SELECT EXISTS(SELECT * from entities_properties WHERE property_id=1 and `value`='$machine_id')";
         $this->updateResultSet();
         return $this->getResultSet();
     }
+
+    /**
+     * Inserisci macchina nel database
+     * @param string $function La funzione svolta dalla macchina
+     * @param array $properties Le proprietà da inserire
+     */
     public function insertMachine($function,$properties){
         $description = $function ." " . $properties[1];
         $type = intval($function);
@@ -86,6 +98,10 @@ SQL;
 
     }
 
+    /**
+     * Cancella macchina dal database
+     * @param string $machine_id La macchina da cancellare
+     */
     public function deleteMachine($machine_id){
 
         $queries = array();
@@ -98,17 +114,32 @@ SQL;
         SqlUtils::atomic($queries,$this);
     }
 
+    /**
+     * Modifica macchina esistente
+     * @param string $machine_id Id della macchina da modificare
+     * @param string $function Funzione svolta dalla macchina
+     * @param array $properties Proprietà da modificare/inserire
+     */
     public function editMachine($machine_id, $function, $properties){
         $this->deleteMachine($machine_id);
         $this->insertMachine($function,$properties);
     }
 
+    /**
+     * Ottieni le funzioni svolgibili dalle macchine
+     * @return mixed
+     */
     public function getEntityTypes(){
         $this->sql = "select * from entity_type";
         $this->updateResultSet();
         return $this->getResultSet();
     }
 
+    /**
+     * Ottieni le proprietà associate a una specifica funzione
+     * @param string $type Funzione della macchina
+     * @return mixed
+     */
     public function getTypeProperties($type){
         $type = intval($type);
         $this->sql = "select property_id from entities_type_properties where entity_type_id = $type";

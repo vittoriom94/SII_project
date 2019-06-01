@@ -16,7 +16,6 @@ use framework\View;
 use models\Machines as MachinesModel;
 use views\Machines as MachinesView;
 use framework\components\DataRepeater as DataRepeater;
-use framework\components\bootstrap\PaginatorBootstrap;
 
 class Machines extends Controller
 {

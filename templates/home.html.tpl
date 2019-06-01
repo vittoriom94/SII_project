@@ -21,7 +21,7 @@
 </head>
 <body>
 
-{Controller:manufacturing\NavigationBar}
+{Controller:NavigationBar}
 
 <div class="container">
     {Controller:Machines}
@@ -81,7 +81,7 @@
 
             // Add custom buttons actions
             // $("div.toolbar").html('Custom tool bar! Text/images etc.');
-            $("#example_length").append('&nbsp; <a href="form" class="btn btn-outline-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i></a>');
+            $("#example_length").append('&nbsp; <a href="MachinesForm" class="btn btn-outline-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i></a>');
 
             // Enable columns search actions
             var table = $('#example').DataTable();

@@ -7,10 +7,12 @@ use framework\Model;
 use framework\View;
 
 use models\Machines as MachinesModel;
-use views\Form as FormView;
+use views\MachinesForm as FormView;
+/**
+ * Controller per l'inserimento di macchine nel database
+ */
 
-
-class Form extends Controller
+class MachinesForm extends Controller
 {
     protected $view;
     protected $model;
@@ -24,9 +26,9 @@ class Form extends Controller
 
     protected function autorun($parameters = null)
     {
-        $this->view->errore_cancellazione("");
+        $this->view->deleteError("");
         $result = $this->model->getEntityTypes();
-        $this->view->set_tendina($result);
+        $this->view->setDropdown($result);
 
         if (isset($_POST["form_modifica"])) {
             $p = $this->valida();
@@ -46,14 +48,16 @@ class Form extends Controller
                 $this->model->deleteMachine($_POST["campo_idinterno"]);
             }
             else{
-                $this->view->errore_cancellazione("Errore nella cancellazione, non esiste la macchina!");
+                $this->view->deleteError("Errore nella cancellazione, non esiste la macchina!");
             }
         }
 
 
 
     }
-
+    /*
+     * Controlla che una macchina sia presente all'interno del database
+     */
     protected function checkMachineExists($machine_id){
         $result = $this->model->queryMachineExists($machine_id);
         $exists = $result->fetch_object();
@@ -63,7 +67,9 @@ class Form extends Controller
         return FALSE;
 
     }
-
+    /*
+     * Controlla i campi configurati dall'utente e salvali in un array
+     */
     protected function valida(){
         $p[1] = $_POST["campo_idinterno"];
 
@@ -76,7 +82,7 @@ class Form extends Controller
         if(isset($_POST["campo_modello"])){
             $p[4] = $_POST["campo_modello"];
         }
-        if(isset($_POST["campo_costruttore"])){ // ERRORE????
+        if(isset($_POST["campo_costruttore"])){ // ERRORE?
             $p[5] = $_POST["campo_costruttore"];
         }
         if(isset($_POST["campo_anno"])){
@@ -108,7 +114,7 @@ class Form extends Controller
 
     public function getView()
     {
-        $view = new FormView("Form");
+        $view = new FormView("machines_form");
         return $view;
     }
 

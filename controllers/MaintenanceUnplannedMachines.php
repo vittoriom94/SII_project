@@ -8,6 +8,7 @@ use framework\Model;
 use framework\View;
 use views\MaintenanceUnplannedMachines as MUMView;
 use models\MaintenanceUnplannedMachines as MUMModel;
+
 class MaintenanceUnplannedMachines extends Controller
 {
 
@@ -16,6 +17,7 @@ class MaintenanceUnplannedMachines extends Controller
         //$this->view = empty($view) ? $this->getView() : $view;
         //$this->model = empty($model) ? $this->getModel() : $model;
         //parent::__construct($this->view,$this->model);
+        $this->grantRole(ADMIN_ROLE_ID);
         $this->model = $this->getModel();
         $this->view = $this->getView();
         parent::__construct($this->view,$this->model);

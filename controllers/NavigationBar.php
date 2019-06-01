@@ -1,9 +1,9 @@
 <?php
 
-namespace controllers\manufacturing;
+namespace controllers;
 
 use framework\Controller;
-use views\manufacturing\NavigationBar as NavigationBarView;
+use views\NavigationBar as NavigationBarView;
 
 class NavigationBar extends Controller
 {

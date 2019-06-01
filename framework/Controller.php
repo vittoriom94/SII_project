@@ -436,6 +436,12 @@ abstract class Controller
         return $user;
     }
 
+    /**
+     * Check if the user has permissions to see a child controller.
+     * If the user is not logged redirect him to the login page,
+     * if the user doesn't have permission hide the controller, otherwise bind it.
+     * @param Controller $childController The child controller to bind
+     */
     public function checkPermissionsAndBind(Controller $childController)
     {
         $user = $childController->restrictToAuthentication(null,null,null);

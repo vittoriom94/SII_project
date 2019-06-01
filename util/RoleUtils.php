@@ -9,13 +9,11 @@ define('DBLOADER_ROLE_ID',1);
 define('GESTOREPROCEDURE_ROLE_ID',1);
 
 class RoleUtils {
-
+    /**
+     * Associa a un ruolo una pagina home diversa a cui reindirizzare dopo il login
+     * @var array
+     */
     public static $getReturnLink = array(
-         1 => "Home", //certificatore
-         2 => "Home", //analista
-         3 => "Home", //ispettore
-         4 => "Home", //db loader
-         5 => "Home", //gestore procedure
-        100 => "Home" //admin
+
     ) ;
 }

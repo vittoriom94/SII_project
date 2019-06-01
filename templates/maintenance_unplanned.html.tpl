@@ -1,3 +1,4 @@
+<!-- IGNORARE -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
 </head>
 <body>
 
-{Controller:manufacturing\NavigationBar}
+{Controller:NavigationBar}
 
 <div class="container">
 

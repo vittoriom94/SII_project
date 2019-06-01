@@ -7,7 +7,7 @@ use framework\Model;
 use framework\View;
 use models\Home as HomeModel;
 use views\Home as HomeView;
-use controllers\manufacturing\NavigationBar;
+use controllers\NavigationBar;
 
 
 class Home extends Controller

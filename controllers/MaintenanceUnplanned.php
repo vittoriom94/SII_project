@@ -7,7 +7,7 @@ use framework\Model;
 use framework\View;
 use models\MaintenanceUnplanned as MaintenanceUnplannedModel;
 use views\MaintenanceUnplanned as MaintenanceUnplannedView;
-use controllers\manufacturing\NavigationBar;
+use controllers\NavigationBar;
 
 
 class MaintenanceUnplanned extends Controller
@@ -29,7 +29,7 @@ class MaintenanceUnplanned extends Controller
 
 
         $maintenance = new MaintenanceUnplannedMachines();
-        $this->bindController($maintenance);
+        $this->checkPermissionsAndBind($maintenance);
 
     }
     public function getView(){

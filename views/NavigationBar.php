@@ -1,6 +1,6 @@
 <?php
 
-namespace views\manufacturing;
+namespace views;
 
 use framework\View;
 
@@ -9,7 +9,7 @@ class NavigationBar extends View
     public function __construct($tplName = null)
     {
         if (empty($tplName))
-            $tplName = "/manufacturing/navigation_bar";
+            $tplName = "/navigation_bar";
         parent::__construct($tplName);
     }
 

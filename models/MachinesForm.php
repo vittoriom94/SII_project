@@ -1,10 +1,10 @@
 <?php
 
-namespace models\common;
+namespace models;
 
 use framework\Model;
 
-class Form extends Model
+class MachinesForm extends Model
 {
     /**
      * Object constructor.

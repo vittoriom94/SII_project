@@ -5,8 +5,14 @@ namespace models;
 
 use framework\Model;
 
+/**
+ * Classe contenente le query per le manutenzioni non programmate
+ */
 class MaintenanceUnplannedMachines extends Model {
-
+    /**
+     * Lista delle manutenzioni
+     * @return mixed
+     */
     public function getMaintenance(){
 
             $this->sql =
@@ -21,7 +27,11 @@ SQL;
         return $this->getResultSet();
     }
 
-
+    /**
+     * Inserisci manutenzione
+     * @param array $properties Informazioni sulla manutenzione
+     * @return mixed
+     */
     public function insertRepairJob($properties){
         $query = "insert into failure_machine (";
         foreach ($properties as $name => $val){
@@ -45,6 +55,12 @@ SQL;
         return $this->getResultSet();
     }
 
+    /**
+     * Modifica manutenzione
+     * @param string $failure_id Id della manutenzione
+     * @param array $properties Proprietà della manutenzione
+     * @return mixed
+     */
     public function editRepairJob($failure_id,$properties){
         $query = "update failure_machine SET ";
         foreach ($properties as $name => $val){
@@ -62,18 +78,30 @@ SQL;
         return $this->getResultSet();
     }
 
+    /**
+     * Cancella manutenzione
+     * @param string $failure_id Id della manutenzione
+     */
     public function deleteRepairJob($failure_id){
 
         $this->sql = "delete from failure_machine where id_failure_machine=$failure_id";
         $this->updateResultSet();
     }
 
+    /**
+     * Ottieni i possibili stati di manutenzione
+     * @return mixed
+     */
     public function getStatuses(){
         $this->sql = "select * from status";
         $this->updateResultSet();
         return $this->getResultSet();
     }
 
+    /**
+     * Ottieni la lista delle riparazioni
+     * @return mixed
+     */
     public function getRepairs(){
         $this->sql = "select * from repair";
         $this->updateResultSet();
