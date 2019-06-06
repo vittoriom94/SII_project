@@ -1,0 +1,12 @@
+#Comment:Traduzioni per la localizzazione del controller
+ProjectName=SII_project
+Contacts=Contatti
+Setting=Impostazioni
+LanguageSettings=Impostazioni lingua
+English=Inglese
+Italian=Italiano
+GuiSettings=Impostazioni GUI
+LookAndFeel=Aspetto
+Exit=Uscita
+InfoMessage=Messaggio dal file di localizzazione: 
+            Click Impostazioni->Impostazioni Lingua per cambiare lingua.
