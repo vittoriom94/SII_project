@@ -8,15 +8,15 @@ use framework\Model;
 /**
  * Classe contenente le query per le manutenzioni non programmate
  */
-class MaintenanceUnplannedMachines extends Model {
+class MaintenancePlannedMachines extends Model {
     /**
      * Lista delle manutenzioni
      * @return mixed
      */
     public function getMaintenance(){
 
-            $this->sql =
-                <<<SQL
+        $this->sql =
+            <<<SQL
 select et.name, fm.entity_id,fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,fm.description,fm.department, fm.operation, s.status_name from failure_machine fm
 join status s on s.status_id=fm.status_id
 join entity e on e.id_entity=fm.entity_id
@@ -87,24 +87,5 @@ SQL;
         $this->updateResultSet();
     }
 
-    /**
-     * Ottieni i possibili stati di manutenzione
-     * @return mixed
-     */
-    public function getStatuses(){
-        $this->sql = "select * from status";
-        $this->updateResultSet();
-        return $this->getResultSet();
-    }
 
-    /**
-     * Ottieni la lista delle riparazioni
-     * @return mixed
-     * @deprecated
-     */
-    public function getRepairs(){
-        $this->sql = "select * from repair";
-        $this->updateResultSet();
-        return $this->getResultSet();
-    }
 }
