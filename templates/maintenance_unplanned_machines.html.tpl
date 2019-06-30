@@ -1,19 +1,19 @@
-<!-- TODO: Cambiare i nomi delle colonne (date1,date2,date3, ecc) -->
+
     <div class="table table-responsive">
         <table id="example" class="table table-bordered table-hover" width="100%">
             <thead>
             <tr>
                 <th class="no-sort">&nbsp;</th>
-                <th>Name</th>
-                <th>Entity id</th>
-                <th>ID failure machine</th>
-                <th>date1</th>
-                <th>date2</th>
-                <th>date3</th>
-                <th>descrizione</th>
-                <th>dipartiment</th>
-                <th>operazione</th>
-                <th>status</th>
+                <th>Nome</th>
+                <th>ID macchina</th>
+                <th>ID Guasto</th>
+                <th>Data Guasto</th>
+                <th>Inizio riparazione</th>
+                <th>Fine riparazione</th>
+                <th>Descrizione</th>
+                <th>Dipartimento</th>
+                <th>Operazione</th>
+                <th>Status</th>
             </tr>
             </thead>
             <tbody>
@@ -37,16 +37,16 @@
             <tfoot>
             <tr>
                 <td>&nbsp;</td>
-                <th>Name</th>
-                <th>Entity id</th>
-                <th>ID failure machine</th>
-                <th>date1</th>
-                <th>date2</th>
-                <th>date3</th>
-                <th>descrizione</th>
-                <th>dipartiment</th>
-                <th>operazione</th>
-                <th>status</th>
+                <th>Nome</th>
+                <th>ID macchina</th>
+                <th>ID Guasto</th>
+                <th>Data Guasto</th>
+                <th>Inizio riparazione</th>
+                <th>Fine riparazione</th>
+                <th>Descrizione</th>
+                <th>Dipartimento</th>
+                <th>Operazione</th>
+                <th>Status</th>
             </tr>
             </tfoot>
         </table>

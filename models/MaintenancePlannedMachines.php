@@ -6,7 +6,7 @@ namespace models;
 use framework\Model;
 
 /**
- * Classe contenente le query per le manutenzioni non programmate
+ * Classe contenente le query per le manutenzioni programmate
  */
 class MaintenancePlannedMachines extends Model {
     /**
@@ -17,9 +17,9 @@ class MaintenancePlannedMachines extends Model {
 
         $this->sql =
             <<<SQL
-select et.name, fm.entity_id,fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,fm.description,fm.department, fm.operation, s.status_name from failure_machine fm
-join status s on s.status_id=fm.status_id
-join entity e on e.id_entity=fm.entity_id
+select et.name, em.entity_id,em.id_maintenance,em.step_date,em.maintenance_date,em.maintenance_time,em.service_time,em.maintenance_description, mt.maintenance_name from entity_maintenance em
+join maintenance_types mt on mt.id_maintenance_type=em.maintenance_type_id
+join entity e on e.id_entity=em.entity_id
 join entity_type et on et.id_entity_type=e.entity_type_id
 SQL;
         $this->updateResultSet();
@@ -32,14 +32,14 @@ SQL;
      * @return mixed
      */
     public function insertRepairJob($properties){
-        $query = "insert into failure_machine (";
+        $query = "insert into entity_maintenance (";
         foreach ($properties as $name => $val){
             $query .= $name . ",";
         }
         $query = substr($query,0,-1);
         $query .= ") values (";
         foreach ($properties as $name => $val){
-            if($name == "entity_id" || $name == "status_id" || $name == "repair_id"){
+            if($name == "entity_id" || $name == "maintenance_type_id"){
                 $val = intval($val);
                 $query .= $val .",";
             } else {
@@ -61,9 +61,9 @@ SQL;
      * @return mixed
      */
     public function editRepairJob($failure_id,$properties){
-        $query = "update failure_machine SET ";
+        $query = "update entity_maintenance SET ";
         foreach ($properties as $name => $val){
-            if($name == "entity_id" || $name == "status_id" || $name == "repair_id") {
+            if($name == "entity_id" || $name == "maintenance_type_id") {
                 $val = intval($val);
                 $query .= $name . " = " . $val . ",";
             } else {
@@ -71,7 +71,7 @@ SQL;
             }
         }
         $query = substr($query,0,-1);
-        $query .= "where id_failure_machine=$failure_id";
+        $query .= "where id_maintenance=$failure_id";
         $this->sql = $query;
         $this->updateResultSet();
         return $this->getResultSet();
@@ -83,7 +83,7 @@ SQL;
      */
     public function deleteRepairJob($failure_id){
 
-        $this->sql = "delete from failure_machine where id_failure_machine=$failure_id";
+        $this->sql = "delete from entity_maintenance where id_maintenance=$failure_id";
         $this->updateResultSet();
     }
 

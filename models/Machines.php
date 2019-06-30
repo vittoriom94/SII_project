@@ -121,8 +121,37 @@ SQL;
      * @param array $properties Proprietà da modificare/inserire
      */
     public function editMachine($machine_id, $function, $properties){
-        $this->deleteMachine($machine_id);
-        $this->insertMachine($function,$properties);
+
+        //$this->deleteMachine($machine_id);
+        //$this->insertMachine($function,$properties);
+
+
+        $queries = array();
+
+        $query = "select entity_id into @id from entities_properties where property_id=1 and `value`='$machine_id'";
+        $queries[] = $query;
+        $query = "delete from entities_properties where entity_id=@id";
+        $queries[] = $query;
+        $query = "delete from entity where id_entity=@id";
+        $queries[] = $query;
+
+        $description = $function ." " . $properties[1];
+        $type = intval($function);
+
+
+        $query = "insert into entity (descrizione, entity_type_id) values ('$description', $type)";
+        $queries[] = $query;
+        $query = "set @id = LAST_INSERT_ID()";
+        $queries[] = $query;
+        $query = "insert into entities_properties (entity_id,property_id,`value`) values ";
+        for ($i = 0;$i<max(array_keys($properties));$i++){
+            if($properties[$i] != NULL){
+                $query = $query . "(@id, $i, '$properties[$i]'),";
+            }
+        }
+        $query = substr($query,0,-1);
+        $queries[] = $query;
+        SqlUtils::atomic($queries,$this);
     }
 
     /**

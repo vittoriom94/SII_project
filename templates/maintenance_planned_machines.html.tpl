@@ -4,16 +4,15 @@
         <thead>
         <tr>
             <th class="no-sort">&nbsp;</th>
-            <th>Name</th>
-            <th>Entity id</th>
-            <th>ID failure machine</th>
-            <th>date1</th>
-            <th>date2</th>
-            <th>date3</th>
-            <th>descrizione</th>
-            <th>dipartiment</th>
-            <th>operazione</th>
-            <th>status</th>
+            <th>Nome Macchina</th>
+            <th>Id macchina</th>
+            <th>ID Manutenzione</th>
+            <th>Step date</th>
+            <th>Data manutenzione</th>
+            <th>Tempo manutenzione</th>
+            <th>Tempo servizio</th>
+            <th>Descrizione</th>
+            <th>Tipo manutenzione</th>
         </tr>
         </thead>
         <tbody>
@@ -22,31 +21,29 @@
         <tr>
             <td>&nbsp;</td>
             <td data-title="Nome Macchina" class="tabella1">{name}</td>
-            <td data-title="ID macchina" class="tabella1">{entity_id}</td>
-            <td data-title="ID Guasto" class="tabella1">{id_failure_machine}</td>
-            <td data-title="Data Guasto" class="tabella1"> {date_failure} </td>
-            <td data-title="Inizio riparazione" class="tabella1">{start_date}</td>
-            <td data-title="Fine riparazione" class="tabella1">{end_date} </td>
-            <td data-title="Descrizione"  class="tabella1">{description}</td>
-            <td data-title="Dipartimento" class="tabella2">{department}</td>
-            <td data-title="Operazione" class="tabella2">{operation}</td>
-            <td data-title="Status" class="tabella2" >{status_name}</td>
+            <td data-title="ID Macchina" class="tabella1">{entity_id}</td>
+            <td data-title="ID Manutenzione" class="tabella1">{id_maintenance}</td>
+            <td data-title="Step Date" class="tabella1"> {step_date} </td>
+            <td data-title="Data manutenzione" class="tabella1">{maintenance_date}</td>
+            <td data-title="Tempo manutenzione" class="tabella1">{maintenance_time} </td>
+            <td data-title="Tempo servizio"  class="tabella1">{service_time}</td>
+            <td data-title="Descrizione" class="tabella2">{maintenance_description}</td>
+            <td data-title="Tipo manutenzione" class="tabella2">{maintenance_name}</td>
         </tr>
         <!-- END Maintenances -->
         </tbody>
         <tfoot>
         <tr>
             <td>&nbsp;</td>
-            <th>Name</th>
-            <th>Entity id</th>
-            <th>ID failure machine</th>
-            <th>date1</th>
-            <th>date2</th>
-            <th>date3</th>
-            <th>descrizione</th>
-            <th>dipartiment</th>
-            <th>operazione</th>
-            <th>status</th>
+            <th>Nome Macchina</th>
+            <th>Id macchina</th>
+            <th>ID Manutenzione</th>
+            <th>Step date</th>
+            <th>Data manutenzione</th>
+            <th>Tempo manutenzione</th>
+            <th>Tempo servizio</th>
+            <th>Descrizione</th>
+            <th>Tipo manutenzione</th>
         </tr>
         </tfoot>
     </table>
