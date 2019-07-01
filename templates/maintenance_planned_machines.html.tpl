@@ -7,7 +7,6 @@
             <th>Nome Macchina</th>
             <th>Id macchina</th>
             <th>ID Manutenzione</th>
-            <th>Step date</th>
             <th>Data manutenzione</th>
             <th>Tempo manutenzione</th>
             <th>Tempo servizio</th>
@@ -23,7 +22,6 @@
             <td data-title="Nome Macchina" class="tabella1">{name}</td>
             <td data-title="ID Macchina" class="tabella1">{entity_id}</td>
             <td data-title="ID Manutenzione" class="tabella1">{id_maintenance}</td>
-            <td data-title="Step Date" class="tabella1"> {step_date} </td>
             <td data-title="Data manutenzione" class="tabella1">{maintenance_date}</td>
             <td data-title="Tempo manutenzione" class="tabella1">{maintenance_time} </td>
             <td data-title="Tempo servizio"  class="tabella1">{service_time}</td>
@@ -38,7 +36,6 @@
             <th>Nome Macchina</th>
             <th>Id macchina</th>
             <th>ID Manutenzione</th>
-            <th>Step date</th>
             <th>Data manutenzione</th>
             <th>Tempo manutenzione</th>
             <th>Tempo servizio</th>
