@@ -24,7 +24,7 @@
             <!-- BEGIN Machines -->
 
             <tr>
-                <td>&nbsp;</td>
+                <td><button type="button" onclick="myFunction(this.parentElement.parentElement)" class="btn btn-dark">Dark Button</button></td>
                 <td data-title="Funzione" class="tabella1">{descrizione}</td>
                 <td data-title="InternalID" class="tabella1">{IDInterno}</td>
                 <td data-title="IndirizzoIP" class="tabella1"> {IndirizzoIP} </td>
@@ -62,3 +62,11 @@
             </tr>
             </tfoot>
         </table>
+        <script>
+            function myFunction(element) {
+                 var figli = element.children;
+                 var figlio = figli[2];
+                 alert(figlio.innerHTML);
+
+            }
+        </script>
