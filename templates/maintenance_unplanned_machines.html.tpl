@@ -10,6 +10,7 @@
                 <th>Data Guasto</th>
                 <th>Inizio riparazione</th>
                 <th>Fine riparazione</th>
+                <th>Team</th>
                 <th>Descrizione</th>
                 <th>Dipartimento</th>
                 <th>Operazione</th>
@@ -27,6 +28,7 @@
                 <td data-title="Data Guasto" class="tabella1"> {date_failure} </td>
                 <td data-title="Inizio riparazione" class="tabella1">{start_date}</td>
                 <td data-title="Fine riparazione" class="tabella1">{end_date} </td>
+                <td data-title="Team"  class="tabella1">{team}</td>
                 <td data-title="Descrizione"  class="tabella1">{description}</td>
                 <td data-title="Dipartimento" class="tabella2">{department}</td>
                 <td data-title="Operazione" class="tabella2">{operation}</td>
@@ -43,6 +45,7 @@
                 <th>Data Guasto</th>
                 <th>Inizio riparazione</th>
                 <th>Fine riparazione</th>
+                <th>Team</th>
                 <th>Descrizione</th>
                 <th>Dipartimento</th>
                 <th>Operazione</th>

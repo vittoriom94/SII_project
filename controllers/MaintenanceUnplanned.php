@@ -27,9 +27,13 @@ class MaintenanceUnplanned extends Controller
         $navigation = new NavigationBar();
         $this->checkPermissionsAndBind($navigation);
 
+        $maintenanceEdit = new MaintenanceUnplannedEdit();
+        $this->checkPermissionsAndBind($maintenanceEdit);
 
         $maintenance = new MaintenanceUnplannedMachines();
         $this->checkPermissionsAndBind($maintenance);
+
+
 
     }
     public function getView(){

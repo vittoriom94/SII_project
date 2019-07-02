@@ -17,7 +17,11 @@ class MaintenanceUnplannedMachines extends Model {
 
             $this->sql =
                 <<<SQL
-select et.name, fm.entity_id,fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,fm.description,fm.department, fm.operation, s.status_name from failure_machine fm
+select et.name, fm.entity_id,fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,
+CASE when fm.internal_team = 1 THEN 'Interno'
+     when fm.internal_team = 0 THEN 'Esterno'
+     else NULL END as team,
+fm.description,fm.department, fm.operation, s.status_name from failure_machine fm
 join status s on s.status_id=fm.status_id
 join entity e on e.id_entity=fm.entity_id
 join entity_type et on et.id_entity_type=e.entity_type_id
@@ -63,7 +67,7 @@ SQL;
     public function editRepairJob($failure_id,$properties){
         $query = "update failure_machine SET ";
         foreach ($properties as $name => $val){
-            if($name == "entity_id" || $name == "status_id" || $name == "repair_id") {
+            if($name == "entity_id" || $name == "status_id" || $name == "repair_id" || $name == "internal_team") {
                 $val = intval($val);
                 $query .= $name . " = " . $val . ",";
             } else {
@@ -71,7 +75,8 @@ SQL;
             }
         }
         $query = substr($query,0,-1);
-        $query .= "where id_failure_machine=$failure_id";
+        $failure_id = intval($failure_id);
+        $query .= " where id_failure_machine=$failure_id";
         $this->sql = $query;
         $this->updateResultSet();
         return $this->getResultSet();
@@ -82,7 +87,7 @@ SQL;
      * @param string $failure_id Id della manutenzione
      */
     public function deleteRepairJob($failure_id){
-
+        $failure_id = intval($failure_id);
         $this->sql = "delete from failure_machine where id_failure_machine=$failure_id";
         $this->updateResultSet();
     }

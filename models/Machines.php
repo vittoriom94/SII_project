@@ -176,4 +176,21 @@ SQL;
         return $this->getResultSet();
     }
 
+    /**
+     * Ottieni la lista di macchine come (ID macchina e ID interno
+     * @return mixed
+     */
+    public function getMachines(){
+        $this->sql = <<<SQL
+select e.id_entity, ep.value as 'id_interno'
+from entity e
+JOIN entities_properties ep ON e.id_entity = ep.entity_id 
+where ep.property_id = 1;
+
+SQL;
+
+        $this->updateResultSet();
+        return $this->getResultSet();
+    }
+
 }

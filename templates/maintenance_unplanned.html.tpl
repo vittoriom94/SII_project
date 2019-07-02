@@ -26,6 +26,8 @@
 <div class="container">
 
     {Controller:MaintenanceUnplannedMachines}
+    <br>
+    {Controller:MaintenanceUnplannedEdit}
 </div>
 
 <!-- Loader -->
