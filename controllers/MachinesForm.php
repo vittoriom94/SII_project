@@ -40,14 +40,14 @@ class MachinesForm extends Controller
         if (isset($_POST["form_modifica"])) {
             $p = $this->valida();
             $funzione = $_POST["campo_funzione"];
-            $this->model->editMachine($funzione,$p);
+            $id_interno = $_POST["campo_idinterno"];
+            $this->model->editMachine($id_interno,$funzione,$p);
         }
 
         if (isset($_POST["form_inserisci"])) {
             $p = $this->valida();
-            //$prova = $this->model->queryMachineExists($p);
-            if($this->checkMachineExists($p)){
-                //echo "Ciao marco";
+            $id_interno = $_POST["campo_idinterno"];
+            if($this->checkMachineExists($id_interno)){
                 $messaggio = "Inserito gia";
             }
             else {
