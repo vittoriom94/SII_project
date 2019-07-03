@@ -27,16 +27,13 @@ class MachinesForm extends Controller
 
     protected function autorun($parameters = null)
     {
-
-        $this->view->deleteError("");
+        $messaggio = "";
         $result = $this->model->getEntityTypes();
         $this->view->setDropdown($result);
 
 
         if (isset($_POST["risultato"])) {
             $this->edit($_POST["risultato"]);
-
-
         }
 
 
@@ -48,8 +45,15 @@ class MachinesForm extends Controller
 
         if (isset($_POST["form_inserisci"])) {
             $p = $this->valida();
-            $funzione = $_POST["campo_funzione"];
-            $this->model->insertMachine($funzione,$p);
+            //$prova = $this->model->queryMachineExists($p);
+            if($this->checkMachineExists($p)){
+                //echo "Ciao marco";
+                $messaggio = "Inserito gia";
+            }
+            else {
+                $funzione = $_POST["campo_funzione"];
+                $this->model->insertMachine($funzione, $p);
+            }
         }
         if (isset($_POST["form_cancella"])) {
 
@@ -57,11 +61,11 @@ class MachinesForm extends Controller
                 $this->model->deleteMachine($_POST["campo_idinterno"]);
             }
             else{
-                $this->view->deleteError("Errore nella cancellazione, non esiste la macchina!");
+                $messaggio= "Errore nella cancellazione, non esiste la macchina!";
             }
         }
 
-
+        $this->view->deleteError($messaggio);
     }
     /*
      * Controlla che una macchina sia presente all'interno del database
