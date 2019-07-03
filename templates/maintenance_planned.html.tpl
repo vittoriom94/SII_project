@@ -1,4 +1,3 @@
-<!-- IGNORARE -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +26,8 @@
 <div class="container">
 
     {Controller:MaintenancePlannedMachines}
+    <br>
+    {Controller:MaintenancePlannedEdit}
 </div>
 
 <!-- Loader -->
@@ -99,6 +100,72 @@
 
         }
     });
+
+
+    function fillFields(selectElement){
+        let selectedElement = selectElement.options[selectElement.selectedIndex].textContent;
+        let table = document.getElementById("example");
+        let columnIndex = 3;
+
+        for (var i = 0, row; row = table.rows[i]; i++) {
+
+            if (row.cells[columnIndex].textContent === selectedElement) {
+
+
+                let machineID = row.cells[2].textContent;
+                let maintenanceDate = row.cells[4].textContent;
+                let maintenanceTime = row.cells[5].textContent;
+                let description = row.cells[7].textContent;
+                let maintenanceType = row.cells[8].textContent;
+
+                selectTime(maintenanceTime);
+                selectMaintenanceType(maintenanceType);
+                selectMachineID(machineID);
+                document.getElementById("maintenance_date").value = maintenanceDate;
+                document.getElementById("descrizione").value = description;
+
+            }
+
+        }
+    }
+
+    function selectTime(maintenanceTime){
+        let daysElement = document.getElementById("days");
+        let timeElement = document.getElementById("hours");
+        let totalHours = maintenanceTime.split(":")[0];
+        let days = Math.floor(totalHours/24);
+        let remainingHours = totalHours % 24;
+
+        let splitTime =  maintenanceTime.split(":");
+        splitTime[0] = remainingHours;
+        splitTime = splitTime.join(":");
+        daysElement.value = days;
+        timeElement.value = splitTime;
+
+
+
+    }
+
+    function selectMaintenanceType(maintenancetype){
+        let selectOptions = document.getElementById("maintenance_types").options;
+        for(var i = 0;i< selectOptions.length;i++){
+            let option = selectOptions[i];
+            if(option.textContent === maintenancetype){
+                selectOptions.selectedIndex = i;
+            }
+        }
+    }
+
+    function selectMachineID(machineID){
+        let selectOptions = document.getElementById("id_macchina").options;
+        for(var i = 0;i< selectOptions.length;i++){
+            let option = selectOptions[i];
+            if(option.value === machineID){
+                selectOptions.selectedIndex = i;
+            }
+        }
+    }
+
 
 </script>
 

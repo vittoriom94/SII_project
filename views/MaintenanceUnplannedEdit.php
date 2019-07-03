@@ -34,7 +34,7 @@ class MaintenanceUnplannedEdit extends View
         try {
             $this->openBlock("guasti");
         } catch (BlockNotFoundException $e) {
-            return true;
+            return;
         }
         while ($temp = $result->fetch_object()) {
             $this->setVar("id_guasto", $temp->id_failure_machine);

@@ -27,6 +27,8 @@ class MaintenancePlanned extends Controller
         $navigation = new NavigationBar();
         $this->checkPermissionsAndBind($navigation);
 
+        $maintenanceEdit = new MaintenancePlannedEdit();
+        $this->checkPermissionsAndBind($maintenanceEdit);
 
         $maintenance = new MaintenancePlannedMachines();
         $this->checkPermissionsAndBind($maintenance);

@@ -87,5 +87,11 @@ SQL;
         $this->updateResultSet();
     }
 
+    public function getMaintenanceTypes(){
+        $this->sql = "select * from maintenance_types";
+        $this->updateResultSet();
+        return $this->getResultSet();
+    }
+
 
 }

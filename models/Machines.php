@@ -77,8 +77,9 @@ SQL;
      * @param array $properties Le proprietà da inserire
      */
     public function insertMachine($function,$properties){
-        $description = $function ." " . $properties[1];
         $type = intval($function);
+        $functionName = $this->getEntityType($type)->fetch_object()->name;
+        $description = $functionName ." " . $properties[1];
         $queries = array();
 
         $query = "insert into entity (descrizione, entity_type_id) values ('$description', $type)";
@@ -160,6 +161,12 @@ SQL;
      */
     public function getEntityTypes(){
         $this->sql = "select * from entity_type";
+        $this->updateResultSet();
+        return $this->getResultSet();
+    }
+
+    public function getEntityType($type){
+        $this->sql = "select * from entity_type where id_entity_type = $type";
         $this->updateResultSet();
         return $this->getResultSet();
     }
