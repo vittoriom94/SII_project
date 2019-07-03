@@ -197,7 +197,7 @@ SQL;
 
         $this->sql = <<<SQL
     SELECT
-  e.descrizione,
+  et.name as descrizione,
   MAX(Case WHEN p.name = 'IDInterno' THEN ep.value END) IDInterno,
   MAX(Case WHEN p.name = 'IndirizzoIP' THEN ep.value END) IndirizzoIP,
   MAX(Case WHEN p.name = 'Costruttore' THEN ep.value END) Costruttore,
@@ -214,7 +214,8 @@ SQL;
 FROM entity e
     JOIN entities_properties ep ON e.id_entity = ep.entity_id 
     JOIN property p ON ep.property_id = p.id_property
-where ep.property_id = 1 and ep.value = $internal_id
+    JOIN entity_type et ON et.id_entity_type = e.entity_type_id
+where ep.entity_id in (SELECT ep.entity_id from entities_properties ep where ep.property_id = 1 and ep.value = "$internal_id")
 GROUP BY e.descrizione
 SQL;
         $this->updateResultSet();

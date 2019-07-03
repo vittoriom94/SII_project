@@ -43,5 +43,7 @@ class Machines extends View
         $this->setBlock();
     }
 
+
+
     
 }

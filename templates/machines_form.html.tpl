@@ -82,34 +82,36 @@
                 <h4 class="heading"><strong>Inserisci </strong> Macchina <span></span></h4>
                 <div class="form">
                     <form method="post" id="form" name="form" onsubmit="return(validate());">
-
-                        <select name="campo_funzione" class="txt form-control">
+                        <!-- BEGIN edit -->
+                        <select name="campo_funzione" id="select" class="txt form-control">
                             <!-- BEGIN tendina -->
                             <option value="{id_funzione}">{funzione}</option>
                             <!-- END tendina -->
                         </select>
+                        <div id="risultato" style="display: none">{campo_selezionato}</div>
 
-                        <input type="text"  placeholder="ID Interno" id="campo_idinterno" value="" name="campo_idinterno" class="txt">
-                        <input type="text"  placeholder="Costruttore" id="campo_costruttore" value="" name="campo_costruttore" class="txt">
-                        <input type="text"  placeholder="Indirizzo IP" id="campo_indirizzoip" value="" name="campo_indirizzoip" class="txt">
-                        <input type="text" placeholder="Modello" id="campo_modello" value="" name="campo_modello" class="txt">
+                        <input type="text"  placeholder="ID Interno" id="campo_idinterno" value="{id_interno}" name="campo_idinterno" class="txt">
+                        <input type="text"  placeholder="Costruttore" id="campo_costruttore" value="{campo_costruttore}" name="campo_costruttore" class="txt">
+                        <input type="text"  placeholder="Indirizzo IP" id="campo_indirizzoip" value="{campo_indirizzoip}" name="campo_indirizzoip" class="txt">
+                        <input type="text" placeholder="Modello" id="campo_modello" value="{campo_modello}" name="campo_modello" class="txt">
 
 
-                        <input type="text"  placeholder="Marca"  id="campo_marca"  value="" name="campo_marca" class="txt">
-                        <input type="text"  placeholder="Modello CN"  id="campo_modellocn"   value="" name="campo_modellocn" class="txt">
-                        <input type="text" placeholder="Versione" id="campo_versione" value="" name="campo_versione" class="txt">
+                        <input type="text"  placeholder="Marca"  id="campo_marca"  value="{campo_marca}" name="campo_marca" class="txt">
+                        <input type="text"  placeholder="Modello CN"  id="campo_modellocn"   value="{campo_modellocn}" name="campo_modellocn" class="txt">
+                        <input type="text" placeholder="Versione" id="campo_versione" value="{campo_versione}" name="campo_versione" class="txt">
 
-                        <input type="text"  placeholder="Note Versione" id="campo_noteversione" value="" name="campo_noteversione" class="txt">
-                        <input type="text"  placeholder="Note Lavorazioni" id="campo_notelavorazioni" value="" name="campo_notelavorazioni" class="txt">
+                        <input type="text"  placeholder="Note Versione" id="campo_noteversione" value="{campo_noteversione}" name="campo_noteversione" class="txt">
+                        <input type="text"  placeholder="Note Lavorazioni" id="campo_notelavorazioni" value="{campo_notelavorazioni}" name="campo_notelavorazioni" class="txt">
 
-                        <input type="text"  placeholder="Numero Tx" id = "campo_numerotx" value="" name="campo_numerotx" class="txt">
-                        <input type="text"  placeholder="Numero Rot"  id="campo_numeroroot"  value="" name="campo_numeroroot" class="txt">
+                        <input type="text"  placeholder="Numero Tx" id = "campo_numerotx" value="{campo_numerotx}" name="campo_numerotx" class="txt">
+                        <input type="text"  placeholder="Numero Rot"  id="campo_numeroroot"  value="{campo_numeroroot}" name="campo_numeroroot" class="txt">
 
-                        <input type="date"  placeholder="Anno"  id="campo_anno" value="" name="campo_anno" class="txt form-control">
+                        <input type="text"  placeholder="Anno"  id="campo_anno" value="{campo_anno}" name="campo_anno" class="txt form-control">
 
                         <input type="submit" id="form_inserisci" name="form_inserisci" value="Inserisci" class="txt2">
                         <input type="submit"  id="form_modifica" name="form_inserisci" value="Modifica" class="txt2">
                         <input type="submit"  id="form_cancella" name="form_cancella" value="Cancella" class="txt2">
+                        <!-- END edit -->
                     </form>
                 </div>
             </div>
@@ -194,5 +196,34 @@
         return true;
 
     }
+
+    selected();
+    bloccaID();
+
+    function selected() {
+
+        var s = document.getElementById("risultato").innerHTML;
+        var select = document.getElementById("select");
+        figli = select.options;
+        var size = figli.length;
+        for (var i = 0; i < size; i++) {
+            if (figli[i].text == s) {
+                select.selectedIndex = i;
+            }
+
+        }
+    }
+
+        function bloccaID() {
+
+            var blocca = document.getElementById("campo_idinterno").value;
+
+            if(blocca !="undefined" || blocca != ""){
+                document.getElementById("campo_idinterno").disabled = true;
+            }
+        }
+
+
+
 
 </script>

@@ -70,6 +70,7 @@ class Machines extends Controller
 
 
 
+
     }
 
     /**

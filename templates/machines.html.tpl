@@ -24,6 +24,9 @@
             <!-- BEGIN Machines -->
 
             <tr>
+                <form id="prova" name="prova" method="post" action="machines_form">
+                    <input type="hidden" id="risultato" name="risultato" value="">
+                </form>
                 <td><button type="button" onclick="myFunction(this.parentElement.parentElement)" class="btn btn-dark">Dark Button</button></td>
                 <td data-title="Funzione" class="tabella1">{descrizione}</td>
                 <td data-title="InternalID" class="tabella1">{IDInterno}</td>
@@ -39,6 +42,7 @@
                 <td data-title="WorkName" class="tabella2">{NomeLavorazioni}</td>
                 <td data-title="TextNumber" class="tabella2">{NumeroTx}</td>
                 <td data-title="TextNumber" class="tabella2">{NumeroRot}</td>
+
             </tr>
             <!-- END Machines -->
             </tbody>
@@ -65,8 +69,14 @@
         <script>
             function myFunction(element) {
                  var figli = element.children;
-                 var figlio = figli[2];
+                 var figlio = figli[4];
                  alert(figlio.innerHTML);
-
+                 var valore = figlio.innerHTML;
+                 var form = document.getElementById("prova");
+                 var input = document.getElementById("risultato");
+                 input.value = valore;
+                 form.submit();
+                 //document.forms["prova"].risultato.value = valore;
+                 //document.forms["prova"].submit();
             }
         </script>

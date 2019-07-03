@@ -30,6 +30,11 @@ class MachinesForm extends Controller
         $result = $this->model->getEntityTypes();
         $this->view->setDropdown($result);
 
+        if (isset($_POST["risultato"])) {
+            $this->edit($_POST["risultato"]);
+        }
+
+
         if (isset($_POST["form_modifica"])) {
             $p = $this->valida();
             $funzione = $_POST["campo_funzione"];
@@ -51,7 +56,6 @@ class MachinesForm extends Controller
                 $this->view->deleteError("Errore nella cancellazione, non esiste la macchina!");
             }
         }
-
 
 
     }
@@ -123,5 +127,15 @@ class MachinesForm extends Controller
         $model = new MachinesModel();
         return $model;
     }
+
+
+    public function edit($result){
+
+        $qr = $this->model->getMachine($result);
+
+        $this->view->edit($qr);
+
+    }
+
 
 }
