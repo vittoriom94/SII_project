@@ -27,6 +27,8 @@ class MachinesForm extends Controller
 
     protected function autorun($parameters = null)
     {
+        $navigation = new NavigationBar();
+        $this->checkPermissionsAndBind($navigation);
         $messaggio = "";
         $result = $this->model->getEntityTypes();
         $this->view->setDropdown($result);
