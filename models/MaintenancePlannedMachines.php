@@ -71,7 +71,7 @@ SQL;
             }
         }
         $query = substr($query,0,-1);
-        $query .= "where id_maintenance=$failure_id";
+        $query .= " where id_maintenance=$failure_id";
         $this->sql = $query;
         $this->updateResultSet();
         return $this->getResultSet();

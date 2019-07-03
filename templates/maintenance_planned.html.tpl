@@ -136,7 +136,10 @@
         let days = Math.floor(totalHours/24);
         let remainingHours = totalHours % 24;
 
-        let splitTime =  maintenanceTime.split(":");
+        let splitTime =  maintenanceTime.trim(" ").split(":");
+        if((remainingHours+"").length < 2){
+            remainingHours = "0"+remainingHours;
+        }
         splitTime[0] = remainingHours;
         splitTime = splitTime.join(":");
         daysElement.value = days;

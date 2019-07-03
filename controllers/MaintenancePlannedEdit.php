@@ -70,23 +70,39 @@ class MaintenancePlannedEdit extends Controller
 
     }
 
-    //da completare
+
     function createNewMaintenance(){
         $p["entity_id"] = $_POST["id_macchina"];
-        $p["department"] = $_POST["reparto"];
-        $p["operation"] = $_POST["operazione"];
-        $p["description"] = $_POST["descrizione"];
-        $p["date_failure"] = $_POST["failure_date"];
-        $p["status_id"] = 1;
+        $p["maintenance_description"] = $_POST["descrizione"];
+        $p["maintenance_date"] = $_POST["maintenance_date"];
+        $p["maintenance_type_id"] = $_POST["maintenance_types"];
+
+        $daysAsHours = intval($_POST["days"])*24;
+        $hours = $_POST["hours"];
+        $hours = explode(":",$hours);
+        $hours[0] = $daysAsHours + intval($hours[0]);
+        $hours = join(":",$hours);
+
+        $p["maintenance_time"] = $hours;
         $this->model->insertRepairJob($p);
 
     }
     //Da completare
     function editMaintenance(){
-        $id = $_POST["id_guasto"];
-        $p["internal_team"] = $this->computeTeam($_POST["team"]);
-        $p["start_date"] = $_POST["start_date"];
-        $p["status_id"] = 2;
+
+        $p["entity_id"] = $_POST["id_macchina"];
+        $p["maintenance_description"] = $_POST["descrizione"];
+        $p["maintenance_date"] = $_POST["maintenance_date"];
+        $p["maintenance_type_id"] = $_POST["maintenance_types"];
+
+        $daysAsHours = intval($_POST["days"])*24;
+        $hours = $_POST["hours"];
+        $hours = explode(":",$hours);
+        $hours[0] = $daysAsHours + intval($hours[0]);
+        $hours = join(":",$hours);
+
+        $p["maintenance_time"] = $hours;
+        $id = intval($_POST["id_maintenances"]);
         $this->model->editRepairJob($id,$p);
     }
 

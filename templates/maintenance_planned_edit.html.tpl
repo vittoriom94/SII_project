@@ -25,7 +25,7 @@
         </select>
 
         <label>Select a duration (days and time):</label><br>
-        <input type="number" min="0" max="200" value="0" class="time" id="days" /><input type="time" step="1" class="time" id="hours"/><br>
+        <input type="number" min="0" max="200" value="0" class="time" id="days" name="days" required><input type="time" step="1" class="time" id="hours" name="hours" required><br>
         <label for="maintenance_date">Data manutenzione: </label><input type="date" id="maintenance_date" name="maintenance_date" class="form-control">
         <label for="descrizione">Descrizione: </label><input type="text" class="form-control" id="descrizione" name="descrizione" value="" required>
     </div>
@@ -41,8 +41,7 @@
         <input type="submit" class="ispettore btn btn-primary" name="new_maintenance" value="Inserisci manutenzione">
     </div>
     <!-- END form_fields -->
-</form>
-<form method="post" id="form" name="form">
+
     <div class="form-group">
         <label for="id_maintenances"> ID Manutenzione:</label>
         <select class="edit form-control" id="id_maintenances" name="id_maintenances" onChange="fillFields(this)">
