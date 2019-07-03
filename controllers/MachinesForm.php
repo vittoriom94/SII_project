@@ -19,6 +19,7 @@ class MachinesForm extends Controller
 
     public function __construct(View $view=null, Model $model=null)
     {
+
         $this->view = empty($view) ? $this->getView() : $view;
         $this->model = empty($model) ? $this->getModel() : $model;
         parent::__construct($this->view,$this->model);
@@ -26,12 +27,16 @@ class MachinesForm extends Controller
 
     protected function autorun($parameters = null)
     {
+
         $this->view->deleteError("");
         $result = $this->model->getEntityTypes();
         $this->view->setDropdown($result);
 
+
         if (isset($_POST["risultato"])) {
             $this->edit($_POST["risultato"]);
+
+
         }
 
 
@@ -40,7 +45,6 @@ class MachinesForm extends Controller
             $funzione = $_POST["campo_funzione"];
             $this->model->editMachine($funzione,$p);
         }
-
 
         if (isset($_POST["form_inserisci"])) {
             $p = $this->valida();
@@ -118,7 +122,13 @@ class MachinesForm extends Controller
 
     public function getView()
     {
-        $view = new FormView("machines_form");
+        if (isset($_POST["risultato"])) {
+            $view = new FormView("machines_form_modifica");
+
+        }
+        else {
+            $view = new FormView("machines_form");
+        }
         return $view;
     }
 

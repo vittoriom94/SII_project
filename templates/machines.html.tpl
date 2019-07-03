@@ -27,7 +27,7 @@
                 <form id="prova" name="prova" method="post" action="machines_form">
                     <input type="hidden" id="risultato" name="risultato" value="">
                 </form>
-                <td><button type="button" onclick="myFunction(this.parentElement.parentElement)" class="btn btn-dark">Dark Button</button></td>
+                <td><button type="button" onclick="myFunction(this.parentElement.parentElement)" class="btn btn-link" ><img src="/SII_project/bottone.jpg" width="30" height="30" ></button></td>
                 <td data-title="Funzione" class="tabella1">{descrizione}</td>
                 <td data-title="InternalID" class="tabella1">{IDInterno}</td>
                 <td data-title="IndirizzoIP" class="tabella1"> {IndirizzoIP} </td>
