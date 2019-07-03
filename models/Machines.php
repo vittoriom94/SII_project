@@ -193,4 +193,33 @@ SQL;
         return $this->getResultSet();
     }
 
+    public function getMachine($internal_id){
+
+        $this->sql = <<<SQL
+    SELECT
+  e.descrizione,
+  MAX(Case WHEN p.name = 'IDInterno' THEN ep.value END) IDInterno,
+  MAX(Case WHEN p.name = 'IndirizzoIP' THEN ep.value END) IndirizzoIP,
+  MAX(Case WHEN p.name = 'Costruttore' THEN ep.value END) Costruttore,
+  MAX(Case WHEN p.name = 'Modello' THEN ep.value END) Modello,
+  MAX(Case WHEN p.name = 'Anno' THEN ep.value END) Anno,
+  MAX(Case WHEN p.name = 'MarcaCN' THEN ep.value END) MarcaCN,
+  MAX(Case WHEN p.name = 'ModelloCN' THEN ep.value END) ModelloCN,
+  MAX(Case WHEN p.name = 'Versione' THEN ep.value END) Versione,
+  MAX(Case WHEN p.name = 'NoteVersione' THEN ep.value END) NoteVersione,
+  MAX(Case WHEN p.name = 'Anno2' THEN ep.value END) Anno2,
+  MAX(Case WHEN p.name = 'NomeLavorazioni' THEN ep.value END) NomeLavorazioni,
+  MAX(Case WHEN p.name = 'NumeroTx' THEN ep.value END) NumeroTx,
+  MAX(Case WHEN p.name = 'NumeroRot' THEN ep.value END) NumeroRot
+FROM entity e
+    JOIN entities_properties ep ON e.id_entity = ep.entity_id 
+    JOIN property p ON ep.property_id = p.id_property
+where ep.property_id = 1 and ep.value = $internal_id
+GROUP BY e.descrizione
+SQL;
+        $this->updateResultSet();
+        return $this->getResultSet();
+
+    }
+
 }
