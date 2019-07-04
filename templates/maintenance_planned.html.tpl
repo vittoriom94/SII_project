@@ -169,7 +169,8 @@
         let selectOptions = document.getElementById("id_macchina").options;
         for(var i = 0;i< selectOptions.length;i++){
             let option = selectOptions[i];
-            if(option.value === machineID){
+            if(option.textContent === machineID){
+                //se cambio in id interno nella tabella, devo cambiare option.value con option.textcontent
                 selectOptions.selectedIndex = i;
             }
         }
