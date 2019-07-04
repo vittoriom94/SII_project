@@ -92,7 +92,7 @@
         </div>
         <div class="col-md-4">
             <div class="form_main">
-                <h4 class="heading"><strong>Inserisci </strong> Macchina <span></span></h4>
+                <h4 class="heading">{RES:Macchina}<span></span></h4>
                 <div class="form">
                     <form method="post" id="form" name="form" onsubmit="return(validate());">
                         <!-- BEGIN edit -->
@@ -103,26 +103,26 @@
                         </select>
                         <div id="risultato" style="display: none">{campo_selezionato}</div>
 
-                        <input type="text"  placeholder="ID Interno" id="campo_idinterno" value="{id_interno}" name="campo_idinterno" class="txt">
-                        <input type="text"  placeholder="Costruttore" id="campo_costruttore" value="{campo_costruttore}" name="campo_costruttore" class="txt">
-                        <input type="text"  placeholder="Indirizzo IP" id="campo_indirizzoip" value="{campo_indirizzoip}" name="campo_indirizzoip" class="txt">
-                        <input type="text" placeholder="Modello" id="campo_modello" value="{campo_modello}" name="campo_modello" class="txt">
+                        <input type="text"  placeholder="{RES:IDinterno}" id="campo_idinterno" value="{id_interno}" name="campo_idinterno" class="txt">
+                        <input type="text"  placeholder="{RES:Costruttore}" id="campo_costruttore" value="{campo_costruttore}" name="campo_costruttore" class="txt">
+                        <input type="text"  placeholder="{RES:IndirizzoIP}" id="campo_indirizzoip" value="{campo_indirizzoip}" name="campo_indirizzoip" class="txt">
+                        <input type="text" placeholder="{RES:Modello}" id="campo_modello" value="{campo_modello}" name="campo_modello" class="txt">
 
 
-                        <input type="text"  placeholder="Marca"  id="campo_marca"  value="{campo_marca}" name="campo_marca" class="txt">
-                        <input type="text"  placeholder="Modello CN"  id="campo_modellocn"   value="{campo_modellocn}" name="campo_modellocn" class="txt">
-                        <input type="text" placeholder="Versione" id="campo_versione" value="{campo_versione}" name="campo_versione" class="txt">
+                        <input type="text"  placeholder="{RES:Marca}"  id="campo_marca"  value="{campo_marca}" name="campo_marca" class="txt">
+                        <input type="text"  placeholder="{RES:ModelloCN}"  id="campo_modellocn"   value="{campo_modellocn}" name="campo_modellocn" class="txt">
+                        <input type="text" placeholder="{RES:Versione}" id="campo_versione" value="{campo_versione}" name="campo_versione" class="txt">
 
-                        <input type="text"  placeholder="Note Versione" id="campo_noteversione" value="{campo_noteversione}" name="campo_noteversione" class="txt">
-                        <input type="text"  placeholder="Note Lavorazioni" id="campo_notelavorazioni" value="{campo_notelavorazioni}" name="campo_notelavorazioni" class="txt">
+                        <input type="text"  placeholder="{RES:NoteVersione}" id="campo_noteversione" value="{campo_noteversione}" name="campo_noteversione" class="txt">
+                        <input type="text"  placeholder="{RES:NomeLavorazioni}" id="campo_notelavorazioni" value="{campo_notelavorazioni}" name="campo_notelavorazioni" class="txt">
 
-                        <input type="text"  placeholder="Numero Tx" id = "campo_numerotx" value="{campo_numerotx}" name="campo_numerotx" class="txt">
-                        <input type="text"  placeholder="Numero Rot"  id="campo_numeroroot"  value="{campo_numeroroot}" name="campo_numeroroot" class="txt">
+                        <input type="text"  placeholder="{RES:NumeroTx}" id = "campo_numerotx" value="{campo_numerotx}" name="campo_numerotx" class="txt">
+                        <input type="text"  placeholder="{RES:NumeroRot}"  id="campo_numeroroot"  value="{campo_numeroroot}" name="campo_numeroroot" class="txt">
 
-                        <input type="text"  placeholder="Anno"  id="campo_anno" value="{campo_anno}" name="campo_anno" class="txt form-control">
+                        <input type="text"  placeholder="{RES:Anno}"  id="campo_anno" value="{campo_anno}" name="campo_anno" class="txt form-control">
 
-                        <input type="submit"  id="form_modifica" name="form_inserisci" value="Modifica" class="txt2">
-                        <input type="submit"  id="form_cancella" name="form_cancella" value="Cancella" class="txt2">
+                        <input type="submit"  id="form_modifica" name="form_inserisci" value="{RES:Update}" class="txt2">
+                        <input type="submit"  id="form_cancella" name="form_cancella" value="{RES:Delete}" class="txt2">
                         <!-- END edit -->
                     </form>
                 </div>

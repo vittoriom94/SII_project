@@ -101,23 +101,23 @@
                             <!-- END tendina -->
                         </select>
 
-                        <input type="text"  placeholder="ID Interno" id="campo_idinterno" value="" name="campo_idinterno" class="txt">
-                        <input type="text"  placeholder="Costruttore" id="campo_costruttore" value="" name="campo_costruttore" class="txt">
-                        <input type="text"  placeholder="Indirizzo IP" id="campo_indirizzoip" value="" name="campo_indirizzoip" class="txt">
-                        <input type="text" placeholder="Modello" id="campo_modello" value="" name="campo_modello" class="txt">
+                        <input type="text"  placeholder="{RES:IDinterno}" id="campo_idinterno" value="" name="campo_idinterno" class="txt">
+                        <input type="text"  placeholder="{RES:Costruttore}" id="campo_costruttore" value="" name="campo_costruttore" class="txt">
+                        <input type="text"  placeholder="{RES:IndirizzoIP}" id="campo_indirizzoip" value="" name="campo_indirizzoip" class="txt">
+                        <input type="text" placeholder="{RES:Modello}" id="campo_modello" value="" name="campo_modello" class="txt">
 
 
-                        <input type="text"  placeholder="Marca"  id="campo_marca"  value="" name="campo_marca" class="txt">
-                        <input type="text"  placeholder="Modello CN"  id="campo_modellocn"   value="" name="campo_modellocn" class="txt">
-                        <input type="text" placeholder="Versione" id="campo_versione" value="" name="campo_versione" class="txt">
+                        <input type="text"  placeholder="{RES:Marca}"  id="campo_marca"  value="" name="campo_marca" class="txt">
+                        <input type="text"  placeholder="{RES:ModelloCN}"  id="campo_modellocn"   value="" name="campo_modellocn" class="txt">
+                        <input type="text" placeholder="{RES:Versione}" id="campo_versione" value="" name="campo_versione" class="txt">
 
-                        <input type="text"  placeholder="Note Versione" id="campo_noteversione" value="" name="campo_noteversione" class="txt">
-                        <input type="text"  placeholder="Note Lavorazioni" id="campo_notelavorazioni" value="" name="campo_notelavorazioni" class="txt">
+                        <input type="text"  placeholder="{RES:NoteVersione}" id="campo_noteversione" value="" name="campo_noteversione" class="txt">
+                        <input type="text"  placeholder="{RES:NomeLavorazioni}" id="campo_notelavorazioni" value="" name="campo_notelavorazioni" class="txt">
 
-                        <input type="text"  placeholder="Numero Tx" id = "campo_numerotx" value="" name="campo_numerotx" class="txt">
-                        <input type="text"  placeholder="Numero Rot"  id="campo_numeroroot"  value="" name="campo_numeroroot" class="txt">
+                        <input type="text"  placeholder="{RES:NumeroTx}" id = "campo_numerotx" value="" name="campo_numerotx" class="txt">
+                        <input type="text"  placeholder="{RES:NumeroRot}"  id="campo_numeroroot"  value="" name="campo_numeroroot" class="txt">
 
-                        <input type="text"  placeholder="Anno"  id="campo_anno" value="" name="campo_anno" class="txt form-control">
+                        <input type="text"  placeholder="{RES:Anno}"  id="campo_anno" value="" name="campo_anno" class="txt form-control">
 
                         <input type="submit" id="form_inserisci" name="form_inserisci" value="{RES:INSERISCI}" class="txt2">
                         <!-- END edit -->
