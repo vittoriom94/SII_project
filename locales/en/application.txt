@@ -1,2 +1,15 @@
 Welcome=Welcome
 Failures=Failures
+Funzione = Function
+IDinterno = Internal ID
+IndirizzoIP = IP Address
+Costruttore = Constructor
+Anno = Year
+MarcaCN = CN Brand
+ModelloCN = CN Model
+Versione = Version
+NoteVersione = Version Note
+Anno2 = Year 2
+NomeLavorazioni = Operation Name
+NumeroTx = Tx Number
+NumeroRot = Rot Number
