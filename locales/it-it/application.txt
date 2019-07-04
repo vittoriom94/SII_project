@@ -29,3 +29,5 @@ Descrizione=Descrizione
 IDManutenzione=ID Manutenzione
 choose=Seleziona un'opzione
 Manutenzione=Manutenzione
+Durata=Durata
+TempoServizio=Tempo di servizio
