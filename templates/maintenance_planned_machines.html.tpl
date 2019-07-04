@@ -4,14 +4,14 @@
         <thead>
         <tr>
             <th class="no-sort">&nbsp;</th>
-            <th>{RES:NomeMacchina}</th>
-            <th>Id macchina</th>
-            <th>ID Manutenzione</th>
-            <th>Data manutenzione</th>
-            <th>Tempo manutenzione</th>
-            <th>Tempo servizio</th>
-            <th>Descrizione</th>
-            <th>Tipo manutenzione</th>
+            <th>{RES:Funzione}</th>
+            <th>{RES:IDinterno}</th>
+            <th>{RES:IDManutenzione}</th>
+            <th>{RES:Datamanutenzione}</th>
+            <th>{RES:Durata}</th>
+            <th>{RES:TempoServizio}</th>
+            <th>{RES:Descrizione}</th>
+            <th>{RES:Tipomanutenzione}</th>
         </tr>
         </thead>
         <tbody>
@@ -33,14 +33,14 @@
         <tfoot>
         <tr>
             <td>&nbsp;</td>
-            <th>Nome Macchina</th>
-            <th>Id macchina</th>
-            <th>ID Manutenzione</th>
-            <th>Data manutenzione</th>
-            <th>Tempo manutenzione</th>
-            <th>Tempo servizio</th>
-            <th>Descrizione</th>
-            <th>Tipo manutenzione</th>
+            <th>{RES:Funzione}</th>
+            <th>{RES:IDinterno}</th>
+            <th>{RES:IDManutenzione}</th>
+            <th>{RES:Datamanutenzione}</th>
+            <th>{RES:Durata}</th>
+            <th>{RES:TempoServizio}</th>
+            <th>{RES:Descrizione}</th>
+            <th>{RES:Tipomanutenzione}</th>
         </tr>
         </tfoot>
     </table>
