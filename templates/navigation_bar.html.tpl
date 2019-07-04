@@ -10,7 +10,7 @@
                 <a class="nav-link" href="Home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="MaintenanceUnplanned">Guasti</a>
+                <a class="nav-link" href="MaintenanceUnplanned">{RES:Failures}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="MaintenancePlanned">Manutenzioni</a>
@@ -23,8 +23,8 @@
                         Language/Lingua
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Italiano</a>
-                        <a class="dropdown-item" href="#">English</a>
+                        <a class="dropdown-item" href="?locale=it-it">Italiano</a>
+                        <a class="dropdown-item" href="?locale=en">English</a>
                     </div>
                 </li>
             </ul>
