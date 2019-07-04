@@ -15,3 +15,6 @@ Anno2=Anno 2
 NomeLavorazioni=Nome Lavorazioni
 NumeroTx=Numero Tx
 NumeroRot=Numero Rot
+INSERISCI=INSERISCI
+MACCHINA=MACCHINA
+

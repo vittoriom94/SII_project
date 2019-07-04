@@ -15,3 +15,5 @@ Anno2=Year 2
 NomeLavorazioni=Operation Name
 NumeroTx=Tx Number
 NumeroRot=Rot Number
+INSERISCI=ADD
+MACCHINA=MACHINE
