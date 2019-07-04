@@ -91,7 +91,7 @@
         </div>
         <div class="col-md-4">
             <div class="form_main">
-                <h4 class="heading"><strong>Inserisci </strong> Macchina <span></span></h4>
+                <h4 class="heading"><strong>{RES:Inserisci} </strong> {RES:Macchina} <span></span></h4>
                 <div class="form">
                     <form method="post" id="form" name="form" onsubmit="return(validate());">
                         <!-- BEGIN edit -->
@@ -119,7 +119,7 @@
 
                         <input type="text"  placeholder="Anno"  id="campo_anno" value="" name="campo_anno" class="txt form-control">
 
-                        <input type="submit" id="form_inserisci" name="form_inserisci" value="Inserisci" class="txt2">
+                        <input type="submit" id="form_inserisci" name="form_inserisci" value="{RES:INSERISCI}" class="txt2">
                         <!-- END edit -->
                     </form>
                 </div>
