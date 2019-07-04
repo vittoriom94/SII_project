@@ -7,6 +7,7 @@ IndirizzoIP=Indirizzo IP
 Costruttore=Costruttore
 Modello=Modello
 Anno=Anno
+Marca=Marca
 MarcaCN=Marca CN
 ModelloCN=Modello CN
 Versione=Versione
@@ -18,4 +19,5 @@ NumeroRot=Numero Rot
 Inserisci=Inserisci
 INSERISCI=INSERISCI
 Macchina=Macchina
-
+Update=Modifica
+Delete=Cancella
