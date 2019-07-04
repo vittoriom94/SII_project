@@ -3,10 +3,10 @@
 namespace util;
 
 define('CERTIFICATORE_ROLE_ID',1);
-define('ANALISTA_ROLE_ID',1);
-define('ISPETTORE_ROLE_ID',1);
-define('DBLOADER_ROLE_ID',1);
-define('GESTOREPROCEDURE_ROLE_ID',1);
+define('ANALISTA_ROLE_ID',2);
+define('ISPETTORE_ROLE_ID',3);
+define('DBLOADER_ROLE_ID',4);
+define('GESTOREPROCEDURE_ROLE_ID',5);
 
 class RoleUtils {
     /**

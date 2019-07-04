@@ -24,6 +24,10 @@ class MaintenancePlanned extends Controller
 
     protected function autorun($parameters = null)
     {
+        $this->grantRole(ISPETTORE_ROLE_ID);
+        $this->grantRole(CERTIFICATORE_ROLE_ID);
+        $this->restrictToRBAC();
+
         $navigation = new NavigationBar();
         $this->checkPermissionsAndBind($navigation);
 

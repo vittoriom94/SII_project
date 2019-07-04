@@ -409,7 +409,7 @@ abstract class Controller
         $user = $this->restrictToAuthentication($redirect,$returnLink,$LoginWarningMessage);
         if (!empty($this->roleBasedACL)){
             $userRole = $user->getRole();
-            if (!in_array($userRole, $this->roleBasedACL)) {
+            if (!in_array($userRole, $this->roleBasedACL) && $userRole!=ADMIN_ROLE_ID) {
                 $redirect = (empty($redirect)) ? DEFAULT_LOGIN_PAGE : $redirect;
                 $returnLink = (!empty($returnLink)) ? "?return_link=$returnLink": "";
                 $LoginWarningMessage=(!empty($LoginWarningMessage)) ? "&login_warning_message=$LoginWarningMessage": "";
