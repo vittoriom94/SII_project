@@ -23,11 +23,19 @@
 
 {Controller:NavigationBar}
 
-<div class="container">
+<div class="container-fluid">
 
     {Controller:MaintenanceUnplannedMachines}
-    <br>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col">
     {Controller:MaintenanceUnplannedEdit}
+        </div>
+        <div class="col">
+        </div>
 </div>
 
 <!-- Loader -->
@@ -55,6 +63,7 @@
                 "dom_no": '<"toolbar">lfrtip',
                 "responsive":   true,
                 "paging":       true,
+                "scrollX": true,
                 "columnDefs":   [
                     {
                         "orderable": false,

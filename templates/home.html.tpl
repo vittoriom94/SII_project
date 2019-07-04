@@ -23,7 +23,7 @@
 
 {Controller:NavigationBar}
 
-<div class="container">
+<div class="container-fluid">
     {Controller:Machines}
 
 </div>
@@ -53,6 +53,7 @@
                 "dom_no": '<"toolbar">lfrtip',
                 "responsive":   true,
                 "paging":       true,
+                "scrollX": true,
                 "columnDefs":   [
                     {
                         "orderable": false,

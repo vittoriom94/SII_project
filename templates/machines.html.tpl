@@ -70,7 +70,6 @@
             function myFunction(element) {
                  var figli = element.children;
                  var figlio = figli[4];
-                 alert(figlio.innerHTML);
                  var valore = figlio.innerHTML;
                  var form = document.getElementById("prova");
                  var input = document.getElementById("risultato");
