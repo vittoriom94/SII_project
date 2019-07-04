@@ -4,7 +4,7 @@
         <thead>
         <tr>
             <th class="no-sort">&nbsp;</th>
-            <th>Nome Macchina</th>
+            <th>{RES:NomeMacchina}</th>
             <th>Id macchina</th>
             <th>ID Manutenzione</th>
             <th>Data manutenzione</th>
