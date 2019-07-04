@@ -13,7 +13,7 @@
                 <a class="nav-link" href="MaintenanceUnplanned">{RES:Failures}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="MaintenancePlanned">Manutenzioni</a>
+                <a class="nav-link" href="MaintenancePlanned">{RES:Manutenzioni}</a>
             </li>
         </ul>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">

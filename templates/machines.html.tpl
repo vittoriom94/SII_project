@@ -4,20 +4,20 @@
             <thead>
             <tr>
                 <th class="no-sort">&nbsp;</th>
-                <th>Funzione</th>
-                <th>ID interno</th>
-                <th>Indirizzo IP</th>
-                <th>Costruttore</th>
-                <th>Modello</th>
-                <th>Anno</th>
-                <th>Marca CN</th>
-                <th>Modello CN</th>
-                <th>Versione</th>
-                <th>Note Versione</th>
-                <th>Anno2</th>
-                <th>Nome Lavorazioni</th>
-                <th>Numero Tx</th>
-                <th>Numero Rot</th>
+                <th>{RES:Funzione}</th>
+                <th>{RES:IDinterno}</th>
+                <th>{RES:IndirizzoIP}</th>
+                <th>{RES:Costruttore}</th>
+                <th>{RES:Modello}</th>
+                <th>{RES:Anno}</th>
+                <th>{RES:MarcaCN}</th>
+                <th>{RES:ModelloCN}</th>
+                <th>{RES:Versione}</th>
+                <th>{RES:NoteVersione}</th>
+                <th>{RES:Anno2}</th>
+                <th>{RES:NomeLavorazioni}</th>
+                <th>{RES:NumeroTx}</th>
+                <th>{RES:NumeroRot}</th>
             </tr>
             </thead>
             <tbody>
