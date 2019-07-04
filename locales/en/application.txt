@@ -38,11 +38,11 @@ DataGuasto=Failure date
 IDGuasto=ID failure
 Interno=Indoor
 Esterno=Outdoor
-DataInizioRiparazione=Beginning date rapair
-Ripara=Repair
+DataInizioRiparazione=Beginning date of rapair
+IniziaRiparazione=Repair
 Esito=Result
 GuastoRisolto=Repaired Failure
 Impossibile=Impossible
 DataFineRiparazione=End date of repair
 ConcludiRiparazione=Stop repairement
-
+Guasto=Failure

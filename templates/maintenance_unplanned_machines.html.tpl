@@ -4,16 +4,16 @@
             <thead>
             <tr>
                 <th class="no-sort">&nbsp;</th>
-                <th>Nome</th>
-                <th>ID macchina</th>
-                <th>ID Guasto</th>
-                <th>Data Guasto</th>
-                <th>Inizio riparazione</th>
-                <th>Fine riparazione</th>
+                <th>{RES:Funzione}</th>
+                <th>{RES:IDinterno}</th>
+                <th>{RES:IDGuasto}</th>
+                <th>{RES:DataGuasto}</th>
+                <th>{RES:DataInizioRiparazione}</th>
+                <th>{RES:DataFineRiparazione}</th>
                 <th>Team</th>
-                <th>Descrizione</th>
-                <th>Dipartimento</th>
-                <th>Operazione</th>
+                <th>{RES:Descrizione}</th>
+                <th>{RES:Reparto}</th>
+                <th>{RES:Operazione}</th>
                 <th>Status</th>
             </tr>
             </thead>
@@ -39,16 +39,16 @@
             <tfoot>
             <tr>
                 <td>&nbsp;</td>
-                <th>Nome</th>
-                <th>ID macchina</th>
-                <th>ID Guasto</th>
-                <th>Data Guasto</th>
-                <th>Inizio riparazione</th>
-                <th>Fine riparazione</th>
+                <th>{RES:Funzione}</th>
+                <th>{RES:IDinterno}</th>
+                <th>{RES:IDGuasto}</th>
+                <th>{RES:DataGuasto}</th>
+                <th>{RES:DataInizioRiparazione}</th>
+                <th>{RES:DataFineRiparazione}</th>
                 <th>Team</th>
-                <th>Descrizione</th>
-                <th>Dipartimento</th>
-                <th>Operazione</th>
+                <th>{RES:Descrizione}</th>
+                <th>{RES:Reparto}</th>
+                <th>{RES:Operazione}</th>
                 <th>Status</th>
             </tr>
             </tfoot>
