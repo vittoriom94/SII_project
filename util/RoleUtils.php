@@ -2,13 +2,16 @@
 
 namespace util;
 
-define('CERTIFICATORE_ROLE_ID',1);
-define('ANALISTA_ROLE_ID',2);
-define('ISPETTORE_ROLE_ID',3);
-define('DBLOADER_ROLE_ID',4);
-define('GESTOREPROCEDURE_ROLE_ID',5);
 
 class RoleUtils {
+
+    const CERTIFICATORE_ROLE_ID = 1;
+    const ANALISTA_ROLE_ID = 2;
+    const ISPETTORE_ROLE_ID = 3;
+    const DBLOADER_ROLE_ID = 4;
+    const GESTOREPROCEDURE_ROLE_ID = 2;
+
+
     /**
      * Associa a un ruolo una pagina home diversa a cui reindirizzare dopo il login
      * @var array
