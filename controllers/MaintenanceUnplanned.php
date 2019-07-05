@@ -6,6 +6,7 @@ use framework\Controller;
 use framework\Model;
 use framework\View;
 use models\MaintenanceUnplanned as MaintenanceUnplannedModel;
+use util\RoleUtils;
 use views\MaintenanceUnplanned as MaintenanceUnplannedView;
 use controllers\NavigationBar;
 
@@ -25,9 +26,9 @@ class MaintenanceUnplanned extends Controller
     protected function autorun($parameters = null)
     {
 
-        $this->grantRole(ISPETTORE_ROLE_ID);
-        $this->grantRole(ANALISTA_ROLE_ID);
-        $this->grantRole(CERTIFICATORE_ROLE_ID);
+        $this->grantRole(RoleUtils::ISPETTORE_ROLE_ID);
+        $this->grantRole(RoleUtils::ANALISTA_ROLE_ID);
+        $this->grantRole(RoleUtils::CERTIFICATORE_ROLE_ID);
         $this->restrictToRBAC();
 
         $navigation = new NavigationBar();

@@ -42,7 +42,7 @@
     </div>
     <!-- END form_fields -->
 
-    <div class="form-group">
+    <div class="form-group certificatore">
         <label for="id_maintenances"> {RES:IDManutenzione}:</label>
         <select class="edit form-control" id="id_maintenances" name="id_maintenances" onChange="fillFields(this)">
             <option disabled selected value> -- {RES:choose} -- </option>
