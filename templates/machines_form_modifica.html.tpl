@@ -94,7 +94,7 @@
             <div class="form_main">
                 <h4 class="heading">{RES:Macchina}<span></span></h4>
                 <div class="form">
-                    <form method="post" id="form" name="form" onsubmit="return(validate());">
+                    <form method="post" id="form" name="form" onsubmit="return(validate(this.submitted));">
                         <!-- BEGIN edit -->
                         <select name="campo_funzione" id="select" class="txt form-control">
                             <!-- BEGIN tendina -->
@@ -121,8 +121,8 @@
 
                         <input type="text"  placeholder="{RES:Anno}"  id="campo_anno" value="{campo_anno}" name="campo_anno" class="txt form-control">
 
-                        <input type="submit"  id="form_modifica" name="form_inserisci" value="{RES:Update}" class="txt2">
-                        <input type="submit"  id="form_cancella" name="form_cancella" value="{RES:Delete}" class="txt2">
+                        <input onclick="this.form.submitted=this.name" type="submit"  id="form_modifica" name="form_inserisci" value="{RES:Update}" class="txt2">
+                        <input onclick="this.form.submitted=this.name" type="submit"  id="form_cancella" name="form_cancella" value="{RES:Delete}" class="txt2">
                         <!-- END edit -->
                     </form>
                 </div>
@@ -147,8 +147,10 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script >
-    function validate() {
-
+    function validate(submitted) {
+        if(submitted === "form_cancella"){
+            return true;
+        }
         var campo_idinterno = document.getElementById("campo_idinterno").value;
         var campo_indirizzoip = document.getElementById("campo_indirizzoip").value;
         var campo_costruttore = document.getElementById("campo_costruttore").value;
@@ -234,7 +236,7 @@
         var blocca = document.getElementById("campo_idinterno").value;
 
         if(blocca !="undefined" || blocca != ""){
-            document.getElementById("campo_idinterno").disabled = true;
+            document.getElementById("campo_idinterno").readOnly = true;
         }
     }
 
