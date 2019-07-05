@@ -17,10 +17,15 @@ class MaintenancePlannedMachines extends Model {
 
         $this->sql =
             <<<SQL
-select et.name, em.entity_id,em.id_maintenance,em.maintenance_date,em.maintenance_time,em.service_time,em.maintenance_description, mt.maintenance_name from entity_maintenance em
+select et.name, 
+MAX(Case WHEN ep.property_id = 1 THEN ep.value END) entity_id,
+em.id_maintenance,em.maintenance_date,em.maintenance_time,em.service_time,em.maintenance_description, mt.maintenance_name 
+from entity_maintenance em
 join maintenance_types mt on mt.id_maintenance_type=em.maintenance_type_id
 join entity e on e.id_entity=em.entity_id
 join entity_type et on et.id_entity_type=e.entity_type_id
+join entities_properties ep on e.id_entity=ep.entity_id
+group by em.id_maintenance
 SQL;
         $this->updateResultSet();
         return $this->getResultSet();

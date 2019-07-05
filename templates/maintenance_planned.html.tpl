@@ -90,9 +90,6 @@
                 }
             });
 
-            // Add custom buttons actions
-            // $("div.toolbar").html('Custom tool bar! Text/images etc.');
-            $("#example_length").append('&nbsp; <a href="#" class="btn btn-outline-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i></a>');
 
             // Enable columns search actions
             var table = $('#example').DataTable();
@@ -172,7 +169,8 @@
         let selectOptions = document.getElementById("id_macchina").options;
         for(var i = 0;i< selectOptions.length;i++){
             let option = selectOptions[i];
-            if(option.value === machineID){
+            if(option.textContent === machineID){
+                //se cambio in id interno nella tabella, devo cambiare option.value con option.textcontent
                 selectOptions.selectedIndex = i;
             }
         }

@@ -17,7 +17,9 @@ class MaintenanceUnplannedMachines extends Model {
 
             $this->sql =
                 <<<SQL
-select et.name, fm.entity_id,fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,
+select et.name,
+MAX(Case WHEN ep.property_id = 1 THEN ep.value END) entity_id,
+fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,
 CASE when fm.internal_team = 1 THEN 'Interno'
      when fm.internal_team = 0 THEN 'Esterno'
      else NULL END as team,
@@ -25,6 +27,8 @@ fm.description,fm.department, fm.operation, s.status_name from failure_machine f
 join status s on s.status_id=fm.status_id
 join entity e on e.id_entity=fm.entity_id
 join entity_type et on et.id_entity_type=e.entity_type_id
+join entities_properties ep on e.id_entity=ep.entity_id
+group by fm.id_failure_machine
 SQL;
         $this->updateResultSet();
         return $this->getResultSet();

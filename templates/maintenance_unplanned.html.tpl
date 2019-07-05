@@ -90,9 +90,6 @@
                 }
             });
 
-            // Add custom buttons actions
-            // $("div.toolbar").html('Custom tool bar! Text/images etc.');
-            $("#example_length").append('&nbsp; <a href="#" class="btn btn-outline-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i></a>');
 
             // Enable columns search actions
             var table = $('#example').DataTable();

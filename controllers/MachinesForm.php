@@ -6,6 +6,7 @@ use framework\Controller;
 use framework\Model;
 use framework\View;
 
+use util\RoleUtils;
 use models\Machines as MachinesModel;
 use views\MachinesForm as FormView;
 /**
@@ -22,6 +23,9 @@ class MachinesForm extends Controller
 
         $this->view = empty($view) ? $this->getView() : $view;
         $this->model = empty($model) ? $this->getModel() : $model;
+        $this->grantRole(RoleUtils::DBLOADER_ROLE_ID);
+        $this->grantRole(RoleUtils::ISPETTORE_ROLE_ID);
+        $this->restrictToRBAC();
         parent::__construct($this->view,$this->model);
     }
 
