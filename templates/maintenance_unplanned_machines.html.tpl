@@ -6,6 +6,7 @@
                 <th class="no-sort">&nbsp;</th>
                 <th>{RES:Funzione}</th>
                 <th>{RES:IDinterno}</th>
+                <th>{RES:Descrizionemacchina}</th>
                 <th>{RES:IDGuasto}</th>
                 <th>{RES:DataGuasto}</th>
                 <th>{RES:DataInizioRiparazione}</th>
@@ -24,6 +25,7 @@
                 <td>&nbsp;</td>
                 <td data-title="Nome Macchina" class="tabella1">{name}</td>
                 <td data-title="ID macchina" class="tabella1">{entity_id}</td>
+                <td data-title="Descrizione macchina" class="tabella1">{description_machine}</td>
                 <td data-title="ID Guasto" class="tabella1">{id_failure_machine}</td>
                 <td data-title="Data Guasto" class="tabella1"> {date_failure} </td>
                 <td data-title="Inizio riparazione" class="tabella1">{start_date}</td>
@@ -41,6 +43,7 @@
                 <td>&nbsp;</td>
                 <th>{RES:Funzione}</th>
                 <th>{RES:IDinterno}</th>
+                <th>{RES:Descrizionemacchina}</th>
                 <th>{RES:IDGuasto}</th>
                 <th>{RES:DataGuasto}</th>
                 <th>{RES:DataInizioRiparazione}</th>

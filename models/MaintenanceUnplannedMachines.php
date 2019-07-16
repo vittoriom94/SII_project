@@ -19,7 +19,7 @@ class MaintenanceUnplannedMachines extends Model {
                 <<<SQL
 select et.name,
 MAX(Case WHEN ep.property_id = 1 THEN ep.value END) entity_id,
-fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,
+e.descrizione as description_machine,fm.id_failure_machine,fm.date_failure,fm.start_date,fm.end_date,
 CASE when fm.internal_team = 1 THEN 'Interno'
      when fm.internal_team = 0 THEN 'Esterno'
      else NULL END as team,

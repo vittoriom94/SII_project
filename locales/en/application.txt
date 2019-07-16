@@ -44,5 +44,6 @@ Esito=Result
 GuastoRisolto=Repaired Failure
 Impossibile=Impossible
 DataFineRiparazione=End date of repair
-ConcludiRiparazione=Stop repairement
+ConcludiRiparazione=Stop repair
 Guasto=Failure
+Descrizionemacchina=Machine description

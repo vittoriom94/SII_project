@@ -53,27 +53,27 @@ class MaintenanceUnplannedEdit extends Controller
         if($role == ADMIN_ROLE_ID){
             return;
         }
-        //3 ispettore, 2 analista, 1 certificatore
+        //3 operatore, 2 analista, 1 certificatore
         $blocks = [3, 2, 1];
 
         $this->view->openBlock("role_visibility");
 
         if($role == 3) {
-            $this->view->setVar("ispettore","initial");
+            $this->view->setVar("operatore","initial");
             $this->view->setVar("analista","none");
             $this->view->setVar("certificatore","none");
             $this->view->setVar("edit","none");
         }
 
         if($role == 2) {
-            $this->view->setVar("ispettore","none");
+            $this->view->setVar("operatore","none");
             $this->view->setVar("analista","initial");
             $this->view->setVar("certificatore","none");
             $this->view->setVar("edit","initial");
         }
 
         if($role == 1) {
-            $this->view->setVar("ispettore","none");
+            $this->view->setVar("operatore","none");
             $this->view->setVar("analista","none");
             $this->view->setVar("certificatore","initial");
             $this->view->setVar("edit","initial");

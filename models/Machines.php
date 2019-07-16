@@ -133,16 +133,11 @@ SQL;
         $queries[] = $query;
         $query = "delete from entities_properties where entity_id=@id";
         $queries[] = $query;
-        $query = "delete from entity where id_entity=@id";
-        $queries[] = $query;
 
         $description = $function ." " . $properties[1];
         $type = intval($function);
 
-
-        $query = "insert into entity (descrizione, entity_type_id) values ('$description', $type)";
-        $queries[] = $query;
-        $query = "set @id = LAST_INSERT_ID()";
+        $query = "update entity set descrizione='$description', entity_type_id=$type where id_entity=@id";
         $queries[] = $query;
         $query = "insert into entities_properties (entity_id,property_id,`value`) values ";
         for ($i = 0;$i<max(array_keys($properties));$i++){
@@ -189,7 +184,7 @@ SQL;
      */
     public function getMachines(){
         $this->sql = <<<SQL
-select e.id_entity, ep.value as 'id_interno'
+select e.id_entity, ep.value as 'id_interno', e.descrizione
 from entity e
 JOIN entities_properties ep ON e.id_entity = ep.entity_id 
 where ep.property_id = 1;

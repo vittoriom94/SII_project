@@ -52,17 +52,17 @@ class MaintenancePlannedEdit extends Controller
         if($role == ADMIN_ROLE_ID){
             return;
         }
-        //3 ispettore, 2 analista, 1 certificatore
+        //3 operatore, 2 analista, 1 certificatore
 
         $this->view->openBlock("role_visibility");
 
         if($role == 3) {
-            $this->view->setVar("ispettore","initial");
+            $this->view->setVar("operatore","initial");
             $this->view->setVar("certificatore","none");
         }
 
         if($role == 1) {
-            $this->view->setVar("ispettore","none");
+            $this->view->setVar("operatore","none");
             $this->view->setVar("certificatore","initial");
         }
         $this->view->parseCurrentBlock();

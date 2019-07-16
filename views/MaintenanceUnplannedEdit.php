@@ -24,6 +24,7 @@ class MaintenanceUnplannedEdit extends View
         while ($temp = $result->fetch_object()) {
             $this->setVar("id_macchina", $temp->id_entity);
             $this->setVar("macchina", $temp->id_interno);
+            $this->setVar("descrizione_macchina", $temp->descrizione);
             $this->parseCurrentBlock();
         }
         $this->setBlock();

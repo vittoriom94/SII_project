@@ -46,3 +46,4 @@ Impossibile=Impossibile
 DataFineRiparazione=Data fine riparazione
 ConcludiRiparazione=Concludi riparazione
 Guasto=Guasto
+Descrizionemacchina=Descrizione macchina

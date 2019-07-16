@@ -19,7 +19,7 @@ class MaintenancePlannedMachines extends Model {
             <<<SQL
 select et.name, 
 MAX(Case WHEN ep.property_id = 1 THEN ep.value END) entity_id,
-em.id_maintenance,em.maintenance_date,em.maintenance_time,em.service_time,em.maintenance_description, mt.maintenance_name 
+e.descrizione as description_machine,em.id_maintenance,em.maintenance_date,em.maintenance_time,em.service_time,em.maintenance_description, mt.maintenance_name 
 from entity_maintenance em
 join maintenance_types mt on mt.id_maintenance_type=em.maintenance_type_id
 join entity e on e.id_entity=em.entity_id

@@ -111,7 +111,7 @@
     function fillFields(selectElement){
         let selectedElement = selectElement.options[selectElement.selectedIndex].textContent;
         let table = document.getElementById("example");
-        let columnIndex = 3;
+        let columnIndex = 4;
 
         for (var i = 0, row; row = table.rows[i]; i++) {
 
@@ -119,16 +119,18 @@
 
 
                 let machineID = row.cells[2].textContent;
-                let maintenanceDate = row.cells[4].textContent;
-                let maintenanceTime = row.cells[5].textContent;
-                let description = row.cells[7].textContent;
-                let maintenanceType = row.cells[8].textContent;
+                //let machineDescription = row.cells[3].textContent;
+                let maintenanceDate = row.cells[5].textContent;
+                let maintenanceTime = row.cells[6].textContent;
+                let description = row.cells[8].textContent;
+                let maintenanceType = row.cells[9].textContent;
 
                 selectTime(maintenanceTime);
                 selectMaintenanceType(maintenanceType);
                 selectMachineID(machineID);
                 document.getElementById("maintenance_date").value = maintenanceDate;
                 document.getElementById("descrizione").value = description;
+                //document.getElementById("descrizione_macchina").value = machineDescription;
 
             }
 
@@ -169,7 +171,7 @@
         let selectOptions = document.getElementById("id_macchina").options;
         for(var i = 0;i< selectOptions.length;i++){
             let option = selectOptions[i];
-            if(option.textContent === machineID){
+            if(option.attributes.name.nodeValue === machineID){
                 //se cambio in id interno nella tabella, devo cambiare option.value con option.textcontent
                 selectOptions.selectedIndex = i;
             }

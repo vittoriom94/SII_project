@@ -6,6 +6,7 @@
             <th class="no-sort">&nbsp;</th>
             <th>{RES:Funzione}</th>
             <th>{RES:IDinterno}</th>
+            <th>{RES:Descrizionemacchina}</th>
             <th>{RES:IDManutenzione}</th>
             <th>{RES:Datamanutenzione}</th>
             <th>{RES:Durata}</th>
@@ -21,6 +22,7 @@
             <td>&nbsp;</td>
             <td data-title="Nome Macchina" class="tabella1">{name}</td>
             <td data-title="ID Macchina" class="tabella1">{entity_id}</td>
+            <td data-title="Descrizione macchina" class="tabella1">{description_machine}</td>
             <td data-title="ID Manutenzione" class="tabella1">{id_maintenance}</td>
             <td data-title="Data manutenzione" class="tabella1">{maintenance_date}</td>
             <td data-title="Tempo manutenzione" class="tabella1">{maintenance_time} </td>
@@ -35,6 +37,7 @@
             <td>&nbsp;</td>
             <th>{RES:Funzione}</th>
             <th>{RES:IDinterno}</th>
+            <th>{RES:Descrizionemacchina}</th>
             <th>{RES:IDManutenzione}</th>
             <th>{RES:Datamanutenzione}</th>
             <th>{RES:Durata}</th>

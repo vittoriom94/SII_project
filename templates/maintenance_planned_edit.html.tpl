@@ -2,8 +2,8 @@
 <!-- BEGIN role_visibility -->
 <style type="text/css" scoped>
 
-    .ispettore {
-        display: {ispettore};
+    .operatore {
+        display: {operatore};
     }
     .certificatore {
         display: {certificatore};
@@ -30,15 +30,15 @@
         <label for="descrizione">{RES:Descrizione}: </label><input type="text" class="form-control" id="descrizione" name="descrizione" value="" required>
     </div>
 
-    <div class="form-group ispettore">
-        <label for="id_macchina"> {RES:IDinterno}:</label>
-        <select class="ispettore form-control" id="id_macchina" name="id_macchina">
+    <div class="form-group operatore">
+        <label for="id_macchina"> {RES:Macchina}:</label>
+        <select class="operatore form-control" id="id_macchina" name="id_macchina">
             <!-- BEGIN tendina -->
-            <option value="{id_macchina}">{macchina}</option>
+            <option name="{macchina}" value="{id_macchina}">{descrizione_macchina}</option>
             <!-- END tendina -->
         </select>
 
-        <input type="submit" class="ispettore btn btn-primary" name="new_maintenance" value="{RES:Inserisci} {RES:Manutenzione}">
+        <input type="submit" class="operatore btn btn-primary" name="new_maintenance" value="{RES:Inserisci} {RES:Manutenzione}">
     </div>
     <!-- END form_fields -->
 

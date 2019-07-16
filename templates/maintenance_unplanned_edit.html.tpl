@@ -2,8 +2,8 @@
 <!-- BEGIN role_visibility -->
 <style type="text/css" scoped>
 
-    .ispettore {
-        display: {ispettore};
+    .operatore {
+        display: {operatore};
     }
     .analista {
         display: {analista};
@@ -20,18 +20,18 @@
 
 
 
-    <div class="form-group ispettore">
-        <label for="id_macchina"> {RES:IDinterno}:</label>
-        <select class="ispettore form-control" id="id_macchina" name="id_macchina">
+    <div class="form-group operatore">
+        <label for="id_macchina"> {RES:Macchina}:</label>
+        <select class="operatore form-control" id="id_macchina" name="id_macchina">
             <!-- BEGIN tendina -->
-            <option value="{id_macchina}">{macchina}</option>
+            <option name="{macchina}" value="{id_macchina}">{descrizione_macchina}</option>
             <!-- END tendina -->
         </select>
-        <label for="reparto">{RES:Reparto}: </label><input type="text" class="ispettore form-control" id="reparto" name="reparto" value="" required>
-        <label for="operazione">{RES:Operazione}: </label><input type="text" class="ispettore form-control" id="operazione" name="operazione" value="" required>
-        <label for="descrizione">{RES:Descrizione}: </label><input type="text" class="ispettore form-control" id="descrizione" name="descrizione" value="" required>
-        <label for="failure_date">{RES:DataGuasto}: </label><input type="date" id="failure_date" name="failure_date" class="ispettore form-control">
-        <input type="submit" class="ispettore btn btn-primary" name="new_failure" value="{RES:Inserisci} {RES:Guasto}">
+        <label for="reparto">{RES:Reparto}: </label><input type="text" class="operatore form-control" id="reparto" name="reparto" value="" required>
+        <label for="operazione">{RES:Operazione}: </label><input type="text" class="operatore form-control" id="operazione" name="operazione" value="" required>
+        <label for="descrizione">{RES:Descrizione}: </label><input type="text" class="operatore form-control" id="descrizione" name="descrizione" value="" required>
+        <label for="failure_date">{RES:DataGuasto}: </label><input type="date" id="failure_date" name="failure_date" class="operatore form-control">
+        <input type="submit" class="operatore btn btn-primary" name="new_failure" value="{RES:Inserisci} {RES:Guasto}">
     </div>
 </form>
 <form method="post" id="form" name="form">
